@@ -1,0 +1,15 @@
+body {
+    font-family: 'Ububtu', sans-serif;
+    color: #000;
+}
+
+.container {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.heading {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 500;
+}

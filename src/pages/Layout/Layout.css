@@ -9,6 +9,7 @@ nav {
 
 .brand {
     color: #000;
+    user-select: none;
     font-family: 'Sacramento', cursive;
     font-size: 2rem;
     font-weight: 500;
