@@ -16,10 +16,10 @@ const Layout = () => {
                         <NavLink to="/about" className='nav-links' activeClassName='active'>About</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/blogs" className='nav-links' activeClassName='active'>Blogs</NavLink>
+                        <NavLink to="/contact" className='nav-links' activeClassName='active'>Contact Me</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/contact" className='nav-links' activeClassName='active'>Contact</NavLink>
+                        <NavLink to="/resume" className='nav-links' activeClassName='active'>Resume</NavLink>
                     </li>
                 </ul>
             </nav>

@@ -1,0 +1,9 @@
+body {
+    font-family: 'Ububtu', sans-serif;
+    color: #000;
+}
+
+.container {
+    margin-top: 5rem;
+    text-align: center;
+}
