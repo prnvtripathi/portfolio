@@ -6,4 +6,90 @@ body {
 .container {
     margin-top: 5rem;
     text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+.text-zone {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form {
+    padding: 3rem;
+    background-color: #85858540;
+    border-radius: 25px;
+}
+
+.font-change {
+    font-family: 'Sacramento', cursive;
+    font-size: 3rem;
+}
+
+.input-fields {
+    border: #00000060 solid 2px;
+    padding: 0.2rem;
+    height: 1.5rem;
+    display: inline-flex;
+    margin: 0.2rem auto;
+}
+
+.name-field {
+    margin-right: 0.15rem;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.emailid-field {
+    margin-left: 0.15rem;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.message {
+    display: block;
+    width: 100%;
+    margin: 0.5rem auto;
+    border-radius: 8px;
+    border: #00000060 solid 2px;
+    padding: 0.2rem;
+    height: 8rem;
+}
+
+.submit {
+    background: none;
+    border: 2px solid #216134;
+    font-size: 18px;
+    line-height: 1;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.submit:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em #1d9541;
+    transform: translateY(-0.25em);
+}
+
+.icons {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.icon-box {
+    margin: 0.5rem;
+    border-radius: 12px;
+    background-color: #85858540;
+    padding: 0.5rem;
+    transition: all 0.25s ease-in-out;
+}
+
+.icon-box:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em #fb26ff;
+    transform: translateY(-0.25em);
+}
+
+.icon-box a {
+    color: #3928ff;
+    text-decoration: none;
 }
