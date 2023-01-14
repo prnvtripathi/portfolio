@@ -2,6 +2,9 @@ import './Layout.css'
 import { Outlet, NavLink } from "react-router-dom";
 
 const Layout = () => {
+
+    const resumeLink = 'https://drive.google.com/file/d/1al5HUHBLi2Z5T_87vVc4V95CTQG6JPO3/view?usp=sharing'
+
     return (
         <>
             <nav>
@@ -19,7 +22,7 @@ const Layout = () => {
                         <NavLink to="/contact" className='nav-links' activeClassName='active'>Contact Me</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/resume" className='nav-links' activeClassName='active'>Resume</NavLink>
+                        <a href={resumeLink} target='_blank' rel='noreferrer' className='nav-links'>Resume</a>
                     </li>
                 </ul>
             </nav>

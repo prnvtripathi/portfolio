@@ -7,6 +7,7 @@ import { SiNotion, SiVisualstudiocode } from 'react-icons/si'
 import mrs from '../../images/mrs.png'
 import weather from '../../images/weather.png'
 import pressart from '../../images/pressart.png'
+import keepit from '../../images/keepit.png'
 
 const About = () => {
     return (
@@ -61,6 +62,13 @@ const About = () => {
                         <a href="https://github.com/prnvtripathi/Movie-Recommender-Chatbot"><img className="pr-img" src={mrs} alt="Movie-Recommender-System" /></a>
                         <a href="https://github.com/prnvtripathi/Movie-Recommender-Chatbot" className="code-link">Code <FaGithub /></a>
                     </div>
+                    <hr />
+                    <h3>KeepIt Notes App</h3>
+                    <div className="project-head">
+                        <a href="http://keepit-326c81.spheron.app/"><img className="pr-img" src={keepit} alt="Pressart-Landing-Page" /></a>
+                        <a href="https://github.com/prnvtripathi/KeepIt" className="code-link">Code <FaGithub /></a>
+                    </div>
+                    <hr />
                     <h3>PressArt - Mobile Photo Editor Landing Page</h3>
                     <div className="project-head">
                         <a href="https://prnvtripathi.github.io/pressart-landing-page"><img className="pr-img" src={pressart} alt="Pressart-Landing-Page" /></a>

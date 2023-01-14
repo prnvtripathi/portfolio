@@ -1,20 +1,40 @@
-import React from "react";
+import React, {useRef} from "react";
+import emailjs from '@emailjs/browser'
 import './Contact.css'
 import { RoughNotation } from "react-rough-notation";
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const Contact = () => {
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_o1b9i7m', 'template_pdd27nv', form.current, 'NkREpU3WwM0aYiRku')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
+  const reloadPage = () => {
+    window.location.reload(true)
+  }
+
   return (
     <div className="container">
       <h1>Wanna be in <RoughNotation show={true} type="underline" color="#1fd954" strokeWidth={5} animationDuration={400}>touch?</RoughNotation></h1>
+      <p className="contact-text">If you have a job or freelancing gig, that you think I can do.</p>
       <div className="text-zone">
         <div className="form">
           <h2>Send a <span className="font-change">personalised</span> message!</h2>
-          <form>
-            <input className="input-fields name-field" name="name" type='text' placeholder="Name" />
-            <input className="input-fields emailid-field" name="email" type='email' placeholder="Email-Id" />
+          <form ref={form} onSubmit={sendEmail}>
+            <input className="input-fields name-field" name="from_name" type='text' placeholder="Name" />
+            <input className="input-fields emailid-field" name="from_email" type='email' placeholder="Email-Id" />
             <textarea className="message" name="message" placeholder="message" />
-            <button className='submit'>Let's go</button>
+            <input className='submit' value="Let's go" type='submit' onClick={reloadPage}/>
           </form>
         </div>
         <div className="socials">
