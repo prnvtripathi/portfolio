@@ -100,3 +100,30 @@ body {
     color: #3928ff;
     text-decoration: none;
 }
+
+@media screen and (max-width: 945px) {
+    .container h1 {
+        margin-top: 8rem;
+    }
+    
+    .text-zone {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .container h1 {
+        margin-top: 14rem;
+    }
+
+    .input-fields {
+        width: 90%;
+        border-radius: 8px;
+    }
+}
+
+@media screen and (max-width:376px) {
+    .icons {
+        flex-direction: column;
+    }
+}

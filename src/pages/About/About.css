@@ -143,3 +143,9 @@ body {
     color: #393ff8;
     font-size: 1.3rem;
 }
+
+@media screen and (max-width:946px) {
+    .about-zone {
+        width: 90%;
+    }
+}

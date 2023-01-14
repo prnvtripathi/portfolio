@@ -85,7 +85,7 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.flat-button:hover{
+.flat-button:hover {
     background-color: transparent;
     border: #000 1px solid;
     color: #000;
@@ -93,8 +93,28 @@ body {
     transform: translateY(-0.25em);
 }
 
-.button-link{
+.button-link {
     color: #000;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 945px) {
+    .name {
+        margin-top: 8rem;
+    }
+
+    .about-text {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .name {
+        margin-top: 14rem;
+    }
+
+    .about-text {
+        width: 90%;
+    }
 }
