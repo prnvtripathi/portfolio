@@ -20,13 +20,13 @@ body {
     padding: 1rem 1rem;
 }
 
-.skills, .projects {
+.skills, .projects, .open-source, .blogs {
     border: #000 2px solid;
     margin: 1rem;
     padding: 1rem;
 }
 
-.skills h2, .projects h2 {
+.skills h2, .projects h2, .open-source h2, .blogs h2{
     display: inline;
 }
 
@@ -109,4 +109,37 @@ body {
 .pr-img:hover {
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
+}
+
+.os-about-main {
+    color: #5b5b5b;
+}
+
+.os-head {
+    text-align: left;
+}
+
+.os-head a {
+    text-decoration: none;
+    color: #393ff8;
+    font-size: 1.3rem;
+}
+
+.os-about {
+    text-align: left;
+    font-size: 1rem;
+}
+
+.blog-about-main {
+    color: #5b5b5b;
+}
+
+.blog-head {
+    text-align: left;
+}
+
+.blog-head a {
+    text-decoration: none;
+    color: #393ff8;
+    font-size: 1.3rem;
 }

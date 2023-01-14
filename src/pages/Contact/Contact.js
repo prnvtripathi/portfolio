@@ -1,8 +1,9 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import emailjs from '@emailjs/browser'
 import './Contact.css'
 import { RoughNotation } from "react-rough-notation";
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { SiHashnode } from 'react-icons/si'
 import Footer from '../Footer/Footer'
 
 const Contact = () => {
@@ -14,9 +15,9 @@ const Contact = () => {
 
     emailjs.sendForm('service_o1b9i7m', 'template_pdd27nv', form.current, 'NkREpU3WwM0aYiRku')
       .then((result) => {
-          console.log(result.text);
+        console.log(result.text);
       }, (error) => {
-          console.log(error.text);
+        console.log(error.text);
       });
   };
 
@@ -35,7 +36,7 @@ const Contact = () => {
             <input className="input-fields name-field" name="from_name" type='text' placeholder="Name" />
             <input className="input-fields emailid-field" name="from_email" type='email' placeholder="Email-Id" />
             <textarea className="message" name="message" placeholder="message" />
-            <input className='submit' value="Let's go" type='submit' onClick={reloadPage}/>
+            <input className='submit' value="Let's go" type='submit' onClick={reloadPage} />
           </form>
         </div>
         <div className="socials">
@@ -46,6 +47,7 @@ const Contact = () => {
             <div className="icon-box"><a href="mailto:tripathipranav14@gmail.com?subject=Message from Portfolio Website"><FaEnvelope size={36} /></a></div>
             <div className="icon-box"><a href="https://www.github.com/prnvtripathi/"><FaGithub size={36} /></a></div>
             <div className="icon-box"><a href="https://instagram.com/prnvtripathi?igshid=Yzg5MTU1MDY="><FaInstagram size={36} /></a></div>
+            <div className="icon-box"><a href="https://prnvtripathi.hashnode.dev/"><SiHashnode size={36} /></a></div>
           </div>
         </div>
       </div>

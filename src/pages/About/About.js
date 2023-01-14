@@ -1,9 +1,9 @@
 import React from "react";
-import { RoughNotation } from "react-rough-notation";
+import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import './About.css'
 import { FaBootstrap, FaCss3, FaGit, FaGithub, FaHtml5, FaJsSquare, FaLinux, FaNodeJs, FaNpm, FaReact, FaSass } from 'react-icons/fa'
 import { DiJqueryLogo } from 'react-icons/di'
-import { SiNotion, SiVisualstudiocode } from 'react-icons/si'
+import { SiHashnode, SiNotion, SiVisualstudiocode } from 'react-icons/si'
 import mrs from '../../images/mrs.png'
 import weather from '../../images/weather.png'
 import pressart from '../../images/pressart.png'
@@ -20,7 +20,7 @@ const About = () => {
             </div>
             <div className="about-zone">
                 <div className="skills">
-                    <RoughNotation show={true} type='circle' strokeWidth={5} animationDelay={600} padding={12} color="red">
+                    <RoughNotation show={true} type='box' strokeWidth={5} animationDelay={600} padding={8} color="blue">
                         <h2>Skills</h2>
                     </RoughNotation>
                     <h3>Web Development</h3>
@@ -74,6 +74,40 @@ const About = () => {
                     <div className="project-head">
                         <a href="https://prnvtripathi.github.io/pressart-landing-page"><img className="pr-img" src={pressart} alt="Pressart-Landing-Page" /></a>
                         <a href="https://github.com/prnvtripathi/pressart-landing-page" className="code-link">Code <FaGithub /></a>
+                    </div>
+                </div>
+
+                <div className="open-source">
+                    <h2>
+                        <RoughNotationGroup show={true}>
+                            <RoughNotation type="highlight" color="#1db954">Green </RoughNotation>
+                            <RoughNotation type="box" color="red" padding={2} strokeWidth={2}> Squares</RoughNotation>
+                        </RoughNotationGroup>
+                    </h2>
+                    <p className="os-about-main">This section shows the contributions i did to some awesome open-source projects</p>
+                    <div className="os-box">
+                        <h3 className="os-head"><a href="https://github.com/Pradumnasaraf/open-source-with-pradumna"><FaGithub /> Open Source with Pradumna</a></h3>
+                        <p className="os-about">
+                            Open Source guide - Contains resources and materials to learn and get yourself started with Open Source, Git, and GitHub.
+                        </p>
+                    </div>
+                    <div className="os-box">
+                        <h3 className="os-head"><a href="https://github.com/Kanika637/amazon-clone"><FaGithub /> Amazon Clone</a></h3>
+                        <p className="os-about">
+                            Clone of Amazon Website
+                        </p>
+                    </div>
+                </div>
+                <div className="blogs">
+                    <h2>
+                        <RoughNotation show={true} type="circle" color="blue" strokeWidth={4}>Blogs</RoughNotation>
+                    </h2>
+                    <p className="blog-about-main">You can read blogs written by me</p>
+                    <div className="blog-box">
+                        <h3 className="blog-head"><a href="https://prnvtripathi.hashnode.dev/my-first-hacktoberfest"><SiHashnode /> My First Hacktoberfest Experience</a></h3>
+                    </div>
+                    <div className="blog-box">
+                        <h3 className="blog-head"><a href="https://prnvtripathi.hashnode.dev/golang"><SiHashnode /> Why Golang is my favourite language</a></h3>
                     </div>
                 </div>
             </div>
