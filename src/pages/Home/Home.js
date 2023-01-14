@@ -2,6 +2,7 @@ import React from "react";
 import './Home.css';
 import { RoughNotation } from "react-rough-notation";
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
     return (
@@ -36,6 +37,8 @@ const Home = () => {
             <Link to='/contact' className="button-link">
                 <div className="flat-button">Let's Connect</div>
             </Link>
+
+            <Footer />
         </div>
     )
 }

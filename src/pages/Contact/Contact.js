@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser'
 import './Contact.css'
 import { RoughNotation } from "react-rough-notation";
 import { FaEnvelope, FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import Footer from '../Footer/Footer'
 
 const Contact = () => {
 
@@ -48,6 +49,8 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

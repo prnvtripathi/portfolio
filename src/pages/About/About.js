@@ -8,6 +8,7 @@ import mrs from '../../images/mrs.png'
 import weather from '../../images/weather.png'
 import pressart from '../../images/pressart.png'
 import keepit from '../../images/keepit.png'
+import Footer from "../Footer/Footer";
 
 const About = () => {
     return (
@@ -76,6 +77,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
