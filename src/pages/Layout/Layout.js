@@ -9,7 +9,7 @@ const Layout = () => {
         <>
             <nav>
                 <div className='brand'>
-                    prnvtripathi
+                    <a href='/'>prnvtripathi</a>
                 </div>
                 <ul>
                     <li>
