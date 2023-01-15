@@ -100,20 +100,15 @@ body {
 }
 
 @media screen and (max-width: 945px) {
-    .name {
-        margin-top: 8rem;
-    }
-
     .about-text {
         width: 70%;
     }
 }
 
 @media screen and (max-width: 426px) {
-    .name {
+    .name{
         margin-top: 15rem;
     }
-
     .about-text {
         width: 90%;
     }
