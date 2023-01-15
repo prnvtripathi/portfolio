@@ -21,10 +21,6 @@ const Contact = () => {
       });
   };
 
-  const reloadPage = () => {
-    window.location.reload(true)
-  }
-
   return (
     <div className="container">
       <h1>Wanna be in <RoughNotation show={true} type="underline" color="#1fd954" strokeWidth={5} animationDuration={400}>touch?</RoughNotation></h1>
@@ -36,7 +32,7 @@ const Contact = () => {
             <input className="input-fields name-field" name="from_name" type='text' placeholder="Name" />
             <input className="input-fields emailid-field" name="from_email" type='email' placeholder="Email-Id" />
             <textarea className="message" name="message" placeholder="message" />
-            <input className='submit' value="Let's go" type='submit' onClick={reloadPage} />
+            <input className='submit' value="Let's go" type='submit' />
           </form>
         </div>
         <div className="socials">
