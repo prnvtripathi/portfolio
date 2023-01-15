@@ -112,7 +112,6 @@ body {
 }
 
 @media screen and (max-width: 426px) {
-
     .input-fields {
         width: 90%;
         border-radius: 8px;

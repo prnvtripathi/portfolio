@@ -86,6 +86,7 @@ ul li {
         position: absolute;
         z-index: 3;
         background-color: #f5f5f5;
+        left: 20%;
     }
 
     .hamburger {
