@@ -33,7 +33,7 @@ body {
 .skill-head {
     display: flex;
     justify-content: space-around;
-    overflow-x: scroll;
+    flex-wrap: wrap;
 }
 
 .skill-box {
