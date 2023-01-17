@@ -11,7 +11,6 @@ const Contact = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
-    e.preventDefault();
 
     emailjs.sendForm('service_o1b9i7m', 'template_pdd27nv', form.current, 'NkREpU3WwM0aYiRku')
       .then((result) => {
@@ -20,10 +19,6 @@ const Contact = () => {
         console.log(error.text);
       });
   };
-
-  const reloadPage = () => {
-    window.location.reload(true)
-  }
 
   return (
     <div className="container">
@@ -36,7 +31,7 @@ const Contact = () => {
             <input className="input-fields name-field" name="from_name" type='text' placeholder="Name" />
             <input className="input-fields emailid-field" name="from_email" type='email' placeholder="Email-Id" />
             <textarea className="message" name="message" placeholder="message" />
-            <input className='submit' value="Let's go" type='submit' onClick={reloadPage} />
+            <input className='submit' value="Let's go" type='submit' />
           </form>
         </div>
         <div className="socials">
