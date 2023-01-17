@@ -131,8 +131,8 @@ ul li {
     }
 }
 
-@media screen and (max-width:376px) {
+@media screen and (max-width:426px) {
     ul.expanded {
-        left: 20%;
+        left: 30%;
     }
 }
