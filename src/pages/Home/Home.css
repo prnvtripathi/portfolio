@@ -64,7 +64,7 @@ body {
 }
 
 .about-text {
-    width: 40%;
+    width: 50%;
     margin-left: auto;
     margin-right: auto;
 
@@ -81,6 +81,7 @@ body {
     height: 2rem;
     background-color: #000;
     color: #eee;
+    margin-top: 1rem;
     padding: 2px 6px;
     transition: all 0.2s ease-in-out;
 }

@@ -28,10 +28,13 @@ const Home = () => {
             </div>
             <div className="about-text">
                 <p>
-                    I am a Front End developer based in Delhi, India. I'm used to with ReactJS & Bootstrap.
-                    I'm a sophomore pursuing Computer Science Engineering. I've also got experience of
-                    using various programming languages, developing websites from the ground up. Professional
-                    strengths include creative problem-solving, written and verbal communication and time management.
+                    aspiring full-stack plus a right arm quick bowler🏏. 
+                    I'm based in Delhi, India. 
+                    I've been working with React, Bootstrap and Vanilla CSS since few months. 
+                    I'm a sophomore pursuing Computer Science Engineering. 
+                    I've some experience of using various programming languages, developing websites from the ground up. 
+                    Professional strengths include creative problem-solving, written and verbal communication and project management.
+                    If i'm not on my laptop hitting keys I might be watching/playing cricket or listening to music.🎵
                 </p>
             </div>
             <Link to='/contact' className="button-link">
