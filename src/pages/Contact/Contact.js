@@ -10,13 +10,25 @@ const Contact = () => {
 
   const form = useRef();
 
+  const createAlert = (message) => {
+    const alertBox = document.querySelector('.alert');
+    alertBox.innerHTML = message;
+    alertBox.style.display = 'block';
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+    }, 3000);
+  }
+
   const sendEmail = (e) => {
+    e.preventDefault();
 
     emailjs.sendForm('service_o1b9i7m', 'template_pdd27nv', form.current, 'NkREpU3WwM0aYiRku')
       .then((result) => {
         console.log(result.text);
+        createAlert("Message sent successfully! I'll get back to you soon.")
       }, (error) => {
         console.log(error.text);
+        createAlert("Message not sent. Please try again later.")
       });
   };
 
@@ -33,6 +45,7 @@ const Contact = () => {
             <textarea className="message" name="message" placeholder="message" />
             <input className='submit' value="Let's go" type='submit' />
           </form>
+          <div className="alert"></div>
         </div>
         <div className="socials">
           <h2>Or <RoughNotation show={true} type="circle" padding={8} animationDelay={400} color="red" strokeWidth={4}>ping</RoughNotation> me here.</h2>
