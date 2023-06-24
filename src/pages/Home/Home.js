@@ -23,18 +23,26 @@ const Home = () => {
                 color='#1db954'
                 padding={5}
                 strokeWidth={4}>
-                Front End
+                Full Stack
             </RoughNotation><br />Developer</h1>
             </div>
             <div className="about-text">
                 <p>
-                    aspiring full-stack plus a right arm quick bowler🏏. 
-                    I'm based in Delhi, India. 
-                    I've been working with React, Bootstrap and Vanilla CSS since few months. 
-                    I'm a sophomore pursuing Computer Science Engineering. 
-                    I've some experience of using various programming languages, developing websites from the ground up. 
-                    Professional strengths include creative problem-solving, written and verbal communication and project management.
-                    If i'm not on my laptop hitting keys I might be watching/playing cricket or listening to music.🎵
+                    I'm a DevOps enthusiast and an explosive right-hand batsman from the capital city of India, New Delhi.🫡
+                    When I'm not smashing keys on my laptop 💻, you'll probably find me either immersed in a thrilling game of cricket 🏏 or grooving
+                    to some awesome beats. 🎵
+                </p>
+                <p>
+                    As a sophomore pursuing Computer Science Engineering, I've dived headfirst into the fascinating world of technology ⚙️.
+                    Over the past few months, I've been rocking it with NextJS, React, NodeJs and MongoDB 😅, crafting stylish websites from scratch.
+                    But hey, I'm not just about the front-end wizardry! ✨ I'm also eager to explore the backend and dive into the depths of databases
+                    and server-side programming. 🤓
+                </p>
+                <p>
+                    Creativity is my middle name! Armed with my trusty problem-solving skills, I fearlessly tackle any challenge that comes my way. 🛡️
+                    Whether it's debugging code or finding innovative solutions, I've got it covered. And hey, communication is key! 🔑 I excel
+                    in expressing my thoughts, both in writing and verbally. When it comes to project management, I'm like the conductor of a
+                    symphony, keeping all the moving parts in perfect harmony. 🎶
                 </p>
             </div>
             <Link to='/contact' className="button-link">
