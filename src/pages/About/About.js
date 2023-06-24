@@ -3,8 +3,8 @@ import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import './About.css'
 import { FaBootstrap, FaCss3, FaGit, FaGithub, FaHtml5, FaJsSquare, FaLinux, FaNodeJs, FaNpm, FaReact, FaSass } from 'react-icons/fa'
 import { DiJqueryLogo } from 'react-icons/di'
-import { SiHashnode, SiNotion, SiVisualstudiocode } from 'react-icons/si'
-import mrs from '../../images/mrs.png'
+import { SiHashnode, SiNotion, SiVisualstudiocode, SiNextdotjs } from 'react-icons/si'
+import earthimpact from '../../images/earthimpact.png'
 import weather from '../../images/weather.png'
 import pressart from '../../images/pressart.png'
 import keepit from '../../images/keepit.png'
@@ -25,12 +25,13 @@ const About = () => {
                     </RoughNotation>
                     <h3>Web Development</h3>
                     <div className="skill-head">
-                        <div className="skill-box"><FaHtml5 size={36} /></div>
-                        <div className="skill-box"><FaCss3 size={36} /></div>
-                        <div className="skill-box"><FaJsSquare size={36} /></div>
+                        <div className="skill-box"><SiNextdotjs size={36} /></div>
                         <div className="skill-box"><FaReact size={36} /></div>
                         <div className="skill-box"><FaNodeJs size={36} /></div>
                         <div className="skill-box"><DiJqueryLogo size={36} /></div>
+                        <div className="skill-box"><FaHtml5 size={36} /></div>
+                        <div className="skill-box"><FaCss3 size={36} /></div>
+                        <div className="skill-box"><FaJsSquare size={36} /></div>
                         <div className="skill-box"><FaSass size={36} /></div>
                         <div className="skill-box"><FaBootstrap size={36} /></div>
                     </div>
@@ -52,16 +53,16 @@ const About = () => {
                     <RoughNotation show={true} type='circle' strokeWidth={5} animationDelay={600} padding={12} color="red">
                         <h2>Projects</h2>
                     </RoughNotation>
+                    <h3>Earth Impact</h3>
+                    <div className="project-head">
+                        <a href="https://earth-impact.vercel.app"><img className="pr-img" src={earthimpact} alt="Movie-Recommender-System" /></a>
+                        <a href="https://github.com/prnvtripathi/earthimpact" className="code-link">Code <FaGithub /></a>
+                    </div>
+                    <hr />
                     <h3>Weather App</h3>
                     <div className="project-head">
                         <a href="https://weather-app-prnvtripathi.netlify.app/"><img className="pr-img" src={weather} alt="Weather-App" /></a>
                         <a href="https://github.com/prnvtripathi/weather-app" className="code-link">Code <FaGithub /></a>
-                    </div>
-                    <hr />
-                    <h3>Movie Recommender System</h3>
-                    <div className="project-head">
-                        <a href="https://github.com/prnvtripathi/Movie-Recommender-Chatbot"><img className="pr-img" src={mrs} alt="Movie-Recommender-System" /></a>
-                        <a href="https://github.com/prnvtripathi/Movie-Recommender-Chatbot" className="code-link">Code <FaGithub /></a>
                     </div>
                     <hr />
                     <h3>KeepIt Notes App</h3>
@@ -92,11 +93,12 @@ const About = () => {
                         </p>
                     </div>
                     <div className="os-box">
-                        <h3 className="os-head"><a href="https://github.com/Kanika637/amazon-clone"><FaGithub /> Amazon Clone</a></h3>
+                        <h3 className="os-head"><a href="https://github.com/devs-in-tech/DevsInTech"><FaGithub /> DevsInTech Website</a></h3>
                         <p className="os-about">
-                            Clone of Amazon Website
+                            Website of DevsInTech - A community of developers and designers.
                         </p>
                     </div>
+                    <h3>And many others here: <a href="https://github.com/prnvtripathi"><FaGithub /> Pranav Tripathi</a></h3>
                 </div>
                 <div className="blogs">
                     <h2>
@@ -108,6 +110,12 @@ const About = () => {
                     </div>
                     <div className="blog-box">
                         <h3 className="blog-head"><a href="https://prnvtripathi.hashnode.dev/golang"><SiHashnode /> Why Golang is my favourite language</a></h3>
+                    </div>
+                    <div className="blog-box">
+                        <h3 className="blog-head"><a href="https://prnvtripathi.hashnode.dev/git"><SiHashnode /> Git- Your first step in tech 🙂</a></h3>
+                    </div>
+                    <div className="blog-box">
+                        <h3 className="blog-head"><a href="https://prnvtripathi.hashnode.dev/front-end-development-roadmap-in-2023"><SiHashnode /> Front-end Development Roadmap in 2023</a></h3>
                     </div>
                 </div>
             </div>

@@ -94,14 +94,19 @@ body {
     color: #5b5b5b;
 }
 
-.os-head {
-    text-align: left;
+.open-source a {
+    text-decoration: none;
+    color: #168c3f;
+    font-size: 1.3rem;
+    transition: all 0.2s ease-in-out;
 }
 
-.os-head a {
-    text-decoration: none;
-    color: #393ff8;
-    font-size: 1.3rem;
+.open-source a:hover {
+    color: #0e8c93;
+}
+
+.os-head {
+    text-align: left;
 }
 
 .os-about {
