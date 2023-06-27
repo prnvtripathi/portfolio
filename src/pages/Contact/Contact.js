@@ -24,11 +24,9 @@ const Contact = () => {
 
     emailjs.sendForm('service_o1b9i7m', 'template_pdd27nv', form.current, 'NkREpU3WwM0aYiRku')
       .then((result) => {
-        console.log(result.text);
-        createAlert("Message sent successfully! I'll get back to you soon.")
+        createAlert(`Message sent successfully! I'll get back to you soon.`)
       }, (error) => {
-        console.log(error.text);
-        createAlert("Message not sent. Please try again later.")
+        createAlert(`Something went wrong! Please try again.`)
       });
   };
 
@@ -40,10 +38,10 @@ const Contact = () => {
         <div className="form">
           <h2>Send a <span className="font-change">personalised</span> message!</h2>
           <form ref={form} onSubmit={sendEmail}>
-            <input className="input-fields name-field" name="from_name" type='text' placeholder="Name" />
-            <input className="input-fields emailid-field" name="from_email" type='email' placeholder="Email-Id" />
-            <textarea className="message" name="message" placeholder="message" />
-            <input className='submit' value="Let's go" type='submit' />
+            <input className="input-fields name-field" name="from_name" type='text' placeholder="Name here!" required />
+            <input className="input-fields emailid-field" name="from_email" type='email' placeholder="Drop your email here!" required />
+            <textarea className="message" name="message" placeholder="What do you want to say?" required />
+            <button className='submit' type='submit'>Let's Go</button>
           </form>
           <div className="alert"></div>
         </div>

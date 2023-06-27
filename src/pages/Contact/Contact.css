@@ -71,7 +71,7 @@ body {
 
 .message {
     display: block;
-    width: 100%;
+    width: 80%;
     margin: 0.5rem auto;
     border-radius: 8px;
     border: #00000060 solid 2px;
@@ -82,11 +82,11 @@ body {
 .submit {
     background: none;
     border: 2px solid #216134;
-    font-size: 18px;
-    line-height: 1;
+    font-size: 16px;
     margin: 0.5rem;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
 }
 
 .submit:hover {
