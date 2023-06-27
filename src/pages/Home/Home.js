@@ -45,8 +45,8 @@ const Home = () => {
                     symphony, keeping all the moving parts in perfect harmony. 🎶
                 </p>
             </div>
-            <Link to='/contact' className="button-link">
-                <div className="flat-button">Let's Connect</div>
+            <Link to='/about' className="button-link">
+                <div className="flat-button">Let's dig deeper</div>
             </Link>
 
             <Footer />
