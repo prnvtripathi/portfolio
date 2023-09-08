@@ -5,9 +5,9 @@ name: CI-CD
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
   # # Allows you to run this workflow manually from the Actions tab
   # workflow_dispatch:
 
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: [14.x, 16.x, 18.x]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -60,7 +60,7 @@ jobs:
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.USERNAME }}
+          username: ${{ secrets.REACTUSERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
@@ -69,23 +69,11 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.USERNAME }}/shopping-app-react:latest
+          tags: ${{ secrets.REACTUSERNAME }}/shopping-app-react:latest
 
       - name: Run the image in a container
         uses: addnab/docker-run-action@v3
         with:
-          image: ${{ secrets.USERNAME }}/shopping-app-react:latest
+          image: ${{ secrets.REACTUSERNAME }}/shopping-app-react:latest
           run: |
             echo "runing the docker image"
-  push_to_vercel:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: amondnet/vercel-action@v20
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.ORG_ID}} 
-          vercel-project-id: ${{ secrets.PROJECT_ID}}
-          vercel-args: "--prod"
-        
