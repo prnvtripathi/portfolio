@@ -20,14 +20,20 @@ body {
     padding: 1rem 1rem;
 }
 
-.skills, .projects, .open-source, .blogs {
+.skills,
+.projects,
+.open-source,
+.blogs {
     border: #000 2px solid;
     margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
 }
 
-.skills h2, .projects h2, .open-source h2, .blogs h2{
+.skills h2,
+.projects h2,
+.open-source h2,
+.blogs h2 {
     display: inline;
 }
 
@@ -49,6 +55,26 @@ body {
 .skill-box:hover {
     box-shadow: 0 0.5em 0.5em -0.4em #00eeff;
     transform: translateY(-0.25em);
+}
+
+.projects-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.project-box {
+    width: 24rem;
+    margin: 0 auto;
+    padding: 0.3rem;
+}
+
+.projects-container img {
+    border-radius: 16px;
+    transition: all 0.2s ease-in-out;
+    margin: 0 auto;
 }
 
 .projects h3 {
@@ -112,20 +138,6 @@ body {
 .os-about {
     text-align: left;
     font-size: 1rem;
-}
-
-.blog-about-main {
-    color: #5b5b5b;
-}
-
-.blog-head {
-    text-align: left;
-}
-
-.blog-head a {
-    text-decoration: none;
-    color: #393ff8;
-    font-size: 1.3rem;
 }
 
 @media screen and (max-width:946px) {

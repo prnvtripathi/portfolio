@@ -3,12 +3,43 @@ import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import './About.css'
 import { FaBootstrap, FaCss3, FaGit, FaGithub, FaHtml5, FaJsSquare, FaLinux, FaNodeJs, FaNpm, FaReact, FaSass } from 'react-icons/fa'
 import { DiJqueryLogo } from 'react-icons/di'
-import { SiHashnode, SiNotion, SiVisualstudiocode, SiNextdotjs } from 'react-icons/si'
+import { SiNotion, SiVisualstudiocode, SiNextdotjs } from 'react-icons/si'
 import earthimpact from '../../images/earthimpact.png'
 import weather from '../../images/weather.png'
 import pressart from '../../images/pressart.png'
 import keepit from '../../images/keepit.png'
 import Footer from "../Footer/Footer";
+
+const projectData = [
+    {
+        id: 1,
+        title: 'Earth Impact',
+        img: earthimpact,
+        deploy: 'https://earth-impact.vercel.app',
+        github: 'https://prnvtripathi/earthimpact'
+    },
+    {
+        id: 2,
+        title: "Weather App",
+        img: weather,
+        deploy: "https://weather-app-prnvtripathi.netlify.app/",
+        github: "https://github.com/prnvtripathi/weather-app",
+    },
+    {
+        id: 3,
+        title: "Keep-It Notes",
+        img: keepit,
+        deploy: "http://keepit-326c81.spheron.app/",
+        github: "https://github.com/prnvtripathi/KeepIt",
+    },
+    {
+        id: 4,
+        title: "Landing Page",
+        img: pressart,
+        deploy: "https://prnvtripathi.github.io/pressart-landing-page",
+        github: "https://github.com/prnvtripathi/pressart-landing-page",
+    }
+]
 
 const About = () => {
     return (
@@ -53,28 +84,22 @@ const About = () => {
                     <RoughNotation show={true} type='circle' strokeWidth={5} animationDelay={600} padding={12} color="red">
                         <h2>Projects</h2>
                     </RoughNotation>
-                    <h3>Earth Impact</h3>
-                    <div className="project-head">
-                        <a href="https://earth-impact.vercel.app"><img className="pr-img" src={earthimpact} alt="Movie-Recommender-System" /></a>
-                        <a href="https://github.com/prnvtripathi/earthimpact" className="code-link">Code <FaGithub /></a>
+                    <div className="projects-container">
+                        {projectData.map((project) => {
+                            const { id, title, img, deploy, github } = project;
+                            return (
+                                <div key={id} className="project-box">
+                                    <h3>{title}</h3>
+                                    <div className="project-head">
+                                        <a href={deploy}><img className="pr-img" src={img} alt={title} /></a>
+                                        <a href={github} className="code-link">Code <FaGithub /></a>
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
-                    <hr />
-                    <h3>Weather App</h3>
-                    <div className="project-head">
-                        <a href="https://weather-app-prnvtripathi.netlify.app/"><img className="pr-img" src={weather} alt="Weather-App" /></a>
-                        <a href="https://github.com/prnvtripathi/weather-app" className="code-link">Code <FaGithub /></a>
-                    </div>
-                    <hr />
-                    <h3>KeepIt Notes App</h3>
-                    <div className="project-head">
-                        <a href="http://keepit-326c81.spheron.app/"><img className="pr-img" src={keepit} alt="Pressart-Landing-Page" /></a>
-                        <a href="https://github.com/prnvtripathi/KeepIt" className="code-link">Code <FaGithub /></a>
-                    </div>
-                    <hr />
-                    <h3>PressArt - Mobile Photo Editor Landing Page</h3>
-                    <div className="project-head">
-                        <a href="https://prnvtripathi.github.io/pressart-landing-page"><img className="pr-img" src={pressart} alt="Pressart-Landing-Page" /></a>
-                        <a href="https://github.com/prnvtripathi/pressart-landing-page" className="code-link">Code <FaGithub /></a>
+                    <div>
+                        <h3>And many others here: <a className="code-link" href="https://github.com/prnvtripathi"><FaGithub /> Pranav Tripathi</a></h3>
                     </div>
                 </div>
 
@@ -100,24 +125,7 @@ const About = () => {
                     </div>
                     <h3>And many others here: <a href="https://github.com/prnvtripathi"><FaGithub /> Pranav Tripathi</a></h3>
                 </div>
-                <div className="blogs">
-                    <h2>
-                        <RoughNotation show={true} type="circle" color="blue" strokeWidth={4}>Blogs</RoughNotation>
-                    </h2>
-                    <p className="blog-about-main">You can read blogs written by me</p>
-                    <div className="blog-box">
-                        <h3 className="blog-head"><a href="https://prnvtripathi.hashnode.dev/my-first-hacktoberfest"><SiHashnode /> My First Hacktoberfest Experience</a></h3>
-                    </div>
-                    <div className="blog-box">
-                        <h3 className="blog-head"><a href="https://prnvtripathi.hashnode.dev/golang"><SiHashnode /> Why Golang is my favourite language</a></h3>
-                    </div>
-                    <div className="blog-box">
-                        <h3 className="blog-head"><a href="https://prnvtripathi.hashnode.dev/git"><SiHashnode /> Git- Your first step in tech 🙂</a></h3>
-                    </div>
-                    <div className="blog-box">
-                        <h3 className="blog-head"><a href="https://prnvtripathi.hashnode.dev/front-end-development-roadmap-in-2023"><SiHashnode /> Front-end Development Roadmap in 2023</a></h3>
-                    </div>
-                </div>
+
             </div>
             <Footer />
         </div>

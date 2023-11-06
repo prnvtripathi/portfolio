@@ -5,6 +5,7 @@ import { Outlet, NavLink } from "react-router-dom";
 const Layout = () => {
 
     const resumeLink = 'https://drive.google.com/file/d/1al5HUHBLi2Z5T_87vVc4V95CTQG6JPO3/view?usp=sharing'
+    const blogLink = 'https://prnvtripathi.hashnode.dev/'
 
     const [expanded, setExpanded] = useState(false)
 
@@ -33,6 +34,8 @@ const Layout = () => {
                     <li>
                         <NavLink to="/contact" className='nav-links' activeClassName='active'>Contact Me</NavLink>
                     </li>
+                    <li>
+                        <a href={blogLink} className='nav-links'>Blogs</a>                    </li>
                     <li>
                         <a href={resumeLink} target='_blank' rel='noreferrer' className='nav-links'>Resume</a>
                     </li>
