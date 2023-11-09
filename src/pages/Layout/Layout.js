@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Layout.css'
 import { Outlet, NavLink } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 const Layout = () => {
 
@@ -21,24 +22,49 @@ const Layout = () => {
                     <div className="meat"></div>
                     <div className="bottom-bun"></div>
                 </label>
-                <div className='brand'>
+                <motion.div 
+                className='brand'
+                initial={{ opacity: 0, x: 1000 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+                >
                     <a href='/'>prnvtripathi</a>
-                </div>
+                </motion.div>
                 <ul className={expanded ? "expanded" : ""}>
-                    <li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -1000 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1 }}
+                    >
                         <NavLink to="/" className='nav-links' activeClassName='active'>Home</NavLink>
-                    </li>
-                    <li>
+                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -1000 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1 }}
+                    >
                         <NavLink to="/about" className='nav-links' activeClassName='active'>About</NavLink>
-                    </li>
-                    <li>
+                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -1000 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1 }}
+                    >
                         <NavLink to="/contact" className='nav-links' activeClassName='active'>Contact Me</NavLink>
-                    </li>
-                    <li>
-                        <a href={blogLink} className='nav-links'>Blogs</a>                    </li>
-                    <li>
+                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -1000 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1 }}
+                    >
+                        <a href={blogLink} className='nav-links'>Blogs</a>                    </motion.li>
+                    <motion.li
+                        initial={{ opacity: 0, x: -1000 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1 }}
+                    >
                         <a href={resumeLink} target='_blank' rel='noreferrer' className='nav-links'>Resume</a>
-                    </li>
+                    </motion.li>
                 </ul>
             </nav>
 
