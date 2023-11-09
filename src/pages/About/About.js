@@ -9,6 +9,7 @@ import weather from '../../images/weather.png'
 import pressart from '../../images/pressart.png'
 import keepit from '../../images/keepit.png'
 import Footer from "../Footer/Footer";
+import { motion } from "framer-motion";
 
 const projectData = [
     {
@@ -41,6 +42,87 @@ const projectData = [
     }
 ]
 
+const webData = [
+    {
+        id: 1,
+        icon: <SiNextdotjs size={36} />,
+    },
+    {
+        id: 2,
+        icon: <FaReact size={36} />,
+    },
+    {
+        id: 3,
+        icon: <FaNodeJs size={36} />,
+    },
+    {
+        id: 4,
+        icon: <DiJqueryLogo size={36} />,
+    },
+    {
+        id: 5,
+        icon: <FaHtml5 size={36} />,
+    },
+    {
+        id: 6,
+        icon: <FaCss3 size={36} />,
+    },
+    {
+        id: 7,
+        icon: <FaJsSquare size={36} />,
+    },
+    {
+        id: 8,
+        icon: <FaSass size={36} />,
+    },
+    {
+        id: 9,
+        icon: <FaBootstrap size={36} />,
+    },
+]
+const toolsData = [
+    {
+        id: 10,
+        icon: <FaGit size={36} />,
+    },
+    {
+        id: 11,
+        icon: <FaGithub size={36} />
+    },
+    {
+        id: 12,
+        icon: <SiVisualstudiocode size={36} />,
+    },
+    {
+        id: 13,
+        icon: <FaLinux size={36} />,
+    },
+    {
+        id: 14,
+        icon: <FaNpm size={32} />
+    }
+]
+const othersData = [
+    {
+        id: 15,
+        icon: <SiNotion size={32} />,
+    }
+]
+
+const osData = [
+    {
+        id: 1,
+        title: "Open Source with Pradumna",
+        link: "https://github.com/pradumnasaraf/open-source-with-pradumna/",
+        desc: "Open Source guide - Contains resources and materials to learn and get yourself started with Open Source, Git, and GitHub."
+    },
+    {
+        id: 2,
+        title: "DevsInTech Website",
+        link: "https://github.com/devs-in-tech/DevsInTech",
+        desc: "Website of DevsInTech - A community of developers and designers.",
+    }
+]
 const About = () => {
     return (
         <div className="container">
@@ -56,28 +138,58 @@ const About = () => {
                     </RoughNotation>
                     <h3>Web Development</h3>
                     <div className="skill-head">
-                        <div className="skill-box"><SiNextdotjs size={36} /></div>
-                        <div className="skill-box"><FaReact size={36} /></div>
-                        <div className="skill-box"><FaNodeJs size={36} /></div>
-                        <div className="skill-box"><DiJqueryLogo size={36} /></div>
-                        <div className="skill-box"><FaHtml5 size={36} /></div>
-                        <div className="skill-box"><FaCss3 size={36} /></div>
-                        <div className="skill-box"><FaJsSquare size={36} /></div>
-                        <div className="skill-box"><FaSass size={36} /></div>
-                        <div className="skill-box"><FaBootstrap size={36} /></div>
+                        {webData.map((data) => {
+                            const { id, icon } = data;
+                            return (
+                                <motion.div
+                                    key={id}
+                                    className="skill-box"
+                                    whileHover={{ scale: 1.1 }}
+                                    initial={{ y: 30 }}
+                                    animate={{ y: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    {icon}
+                                </motion.div>
+                            )
+                        })}
                     </div>
 
                     <h3>Tools</h3>
                     <div className="skill-head">
-                        <div className="skill-box"><FaGit size={36} /></div>
-                        <div className="skill-box"><FaGithub size={36} /></div>
-                        <div className="skill-box"><FaNpm size={36} /></div>
-                        <div className="skill-box"><SiVisualstudiocode size={36} /></div>
-                        <div className="skill-box"><FaLinux size={36} /></div>
+                        {toolsData.map((data) => {
+                            const { id, icon } = data;
+                            return (
+                                <motion.div
+                                    key={id}
+                                    className="skill-box"
+                                    whileHover={{ scale: 1.1 }}
+                                    initial={{ y: -30 }}
+                                    animate={{ y: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    {icon}
+                                </motion.div>
+                            )
+                        })}
                     </div>
                     <h3>Others</h3>
                     <div className="skill-head">
-                        <div className="skill-box"><SiNotion size={36} /></div>
+                        {othersData.map((data) => {
+                            const { id, icon } = data;
+                            return (
+                                <motion.div
+                                    key={id}
+                                    className="skill-box"
+                                    whileHover={{ scale: 1.1 }}
+                                    initial={{ y: 30 }}
+                                    animate={{ y: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    {icon}
+                                </motion.div>
+                            )
+                        })}
                     </div>
                 </div>
                 <div className="projects">
@@ -91,7 +203,16 @@ const About = () => {
                                 <div key={id} className="project-box">
                                     <h3>{title}</h3>
                                     <div className="project-head">
-                                        <a href={deploy}><img className="pr-img" src={img} alt={title} /></a>
+                                        <a href={deploy}>
+                                            <motion.img
+                                                initial={{ x: 1000, scale: 0.9 }}
+                                                animate={{ x: 0 }}
+                                                whileHover={{ scale: 1.1 }}
+                                                transition={{ duration: 0.2 }}
+                                                className="pr-img"
+                                                src={img}
+                                                alt={title} />
+                                        </a>
                                         <a href={github} className="code-link">Code <FaGithub /></a>
                                     </div>
                                 </div>
@@ -111,17 +232,22 @@ const About = () => {
                         </RoughNotationGroup>
                     </h2>
                     <p className="os-about-main">This section shows the contributions i did to some awesome open-source projects</p>
-                    <div className="os-box">
-                        <h3 className="os-head"><a href="https://github.com/Pradumnasaraf/open-source-with-pradumna"><FaGithub /> Open Source with Pradumna</a></h3>
-                        <p className="os-about">
-                            Open Source guide - Contains resources and materials to learn and get yourself started with Open Source, Git, and GitHub.
-                        </p>
-                    </div>
-                    <div className="os-box">
-                        <h3 className="os-head"><a href="https://github.com/devs-in-tech/DevsInTech"><FaGithub /> DevsInTech Website</a></h3>
-                        <p className="os-about">
-                            Website of DevsInTech - A community of developers and designers.
-                        </p>
+                    <div className="os-container">
+                        {osData.map((data) => {
+                            const { id, title, link, desc } = data;
+                            return (
+                                <motion.div
+                                    key={id}
+                                    className="os-box"
+                                    initial={{ y: 30 }}
+                                    animate={{ y: 0 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    <a href={link} className="os-head"><FaGithub /> {title}</a>
+                                    <p className="os-about">{desc}</p>
+                                </motion.div>
+                            )
+                        })}
                     </div>
                     <h3>And many others here: <a href="https://github.com/prnvtripathi"><FaGithub /> Pranav Tripathi</a></h3>
                 </div>
