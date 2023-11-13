@@ -96,6 +96,7 @@ const webData = [
         icon: <FaBootstrap size={36} />,
     },
 ]
+
 const toolsData = [
     {
         id: 10,
@@ -118,6 +119,7 @@ const toolsData = [
         icon: <FaNpm size={32} />
     }
 ]
+
 const othersData = [
     {
         id: 15,
