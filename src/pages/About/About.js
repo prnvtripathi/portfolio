@@ -200,9 +200,14 @@ const About = () => {
                                     key={id}
                                     className="skill-box"
                                     whileHover={{ scale: 1.1 }}
-                                    initial={{ y: 30 }}
-                                    animate={{ y: 0 }}
-                                    transition={{ duration: 0.5 }}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.5, duration: 1 }}
+                                    variants={{
+                                        visible: { opacity: 1, y: 0 },
+                                        hidden: { opacity: 0, y: 30 }
+                                    }}
                                 >
                                     {icon}
                                 </motion.div>
@@ -223,10 +228,14 @@ const About = () => {
                                     <div className="project-head">
                                         <a href={deploy}>
                                             <motion.img
-                                                initial={{ x: 1000, scale: 0.9 }}
-                                                animate={{ x: 0 }}
-                                                whileHover={{ scale: 1.1 }}
-                                                transition={{ duration: 0.2 }}
+                                                initial="hidden"
+                                                whileInView="visible"
+                                                viewport={{ once: true }}
+                                                transition={{ delay: 0.5, duration: 1 }}
+                                                variants={{
+                                                    visible: { opacity: 1, x: 0 },
+                                                    hidden: { opacity: 0, x: 100 }
+                                                }}
                                                 className="pr-img"
                                                 src={img}
                                                 alt={title} />
@@ -257,9 +266,14 @@ const About = () => {
                                 <motion.div
                                     key={id}
                                     className="os-box"
-                                    initial={{ y: 30 }}
-                                    animate={{ y: 0 }}
-                                    transition={{ duration: 0.5 }}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.5, duration: 1 }}
+                                    variants={{
+                                        visible: { opacity: 1, y: 0 },
+                                        hidden: { opacity: 0, y: 30 }
+                                    }}
                                 >
                                     <a href={link} className="os-head"><FaGithub /> {title}</a>
                                     <p className="os-about">{desc}</p>
