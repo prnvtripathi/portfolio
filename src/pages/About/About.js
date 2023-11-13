@@ -6,40 +6,56 @@ import { DiJqueryLogo } from 'react-icons/di'
 import { SiNotion, SiVisualstudiocode, SiNextdotjs } from 'react-icons/si'
 import earthimpact from '../../images/earthimpact.png'
 import weather from '../../images/weather.png'
-import pressart from '../../images/pressart.png'
 import keepit from '../../images/keepit.png'
+import gardenify from '../../images/gardenify.png'
+import gardenifyadmin from '../../images/gardenifyadmin.png'
+import campaigningsource from '../../images/campaigningsource.png'
 import Footer from "../Footer/Footer";
 import { motion } from "framer-motion";
 
 const projectData = [
     {
         id: 1,
-        title: 'Earth Impact',
-        img: earthimpact,
-        deploy: 'https://earth-impact.vercel.app',
-        github: 'https://prnvtripathi/earthimpact'
+        title: 'Gardenify',
+        img: gardenify,
+        deploy: 'https://gardenify.vercel.app',
+        github: 'https://github.com/prnvtripathi/gardenify'
     },
     {
         id: 2,
+        title: 'Gardenify Admin',
+        img: gardenifyadmin,
+        deploy: 'https://gardenify-admin.vercel.app',
+        github: 'https://github.com/prnvtripathi/gardenify-admin'
+    },
+    {
+        id: 3,
+        title: 'Campaigning Source',
+        img: campaigningsource,
+        deploy: 'https://campaigningsource.com',
+        github: 'https://github.com/prnvtripathi'
+    },
+    {
+        id: 4,
+        title: 'Earth Impact',
+        img: earthimpact,
+        deploy: 'https://earth-impact.vercel.app',
+        github: 'https://github.com/prnvtripathi/earthimpact'
+    },
+    {
+        id: 5,
         title: "Weather App",
         img: weather,
         deploy: "https://weather-app-prnvtripathi.netlify.app/",
         github: "https://github.com/prnvtripathi/weather-app",
     },
     {
-        id: 3,
+        id: 6,
         title: "Keep-It Notes",
         img: keepit,
         deploy: "http://keepit-326c81.spheron.app/",
         github: "https://github.com/prnvtripathi/KeepIt",
     },
-    {
-        id: 4,
-        title: "Landing Page",
-        img: pressart,
-        deploy: "https://prnvtripathi.github.io/pressart-landing-page",
-        github: "https://github.com/prnvtripathi/pressart-landing-page",
-    }
 ]
 
 const webData = [
