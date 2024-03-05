@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 const Layout = () => {
 
-    const resumeLink = 'https://drive.google.com/file/d/1_MddAsBlDPApdJqnO3vrg5v_Nnzt6-jR/view?usp=sharing'
+    const resumeLink = 'https://drive.google.com/file/d/1fCl0ptqn_eYAXiBc6KBluWfbfCiTdoPg/view?usp=drive_link'
     const blogLink = 'https://prnvtripathi.hashnode.dev/'
 
     const [expanded, setExpanded] = useState(false)
