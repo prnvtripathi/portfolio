@@ -1,4 +1,13 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card"
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 
 export function ExperienceSection() {
   const experiences = [
@@ -26,37 +35,74 @@ export function ExperienceSection() {
         "Created responsive websites for clients across various industries. Worked closely with the design team to implement pixel-perfect designs.",
       technologies: ["JavaScript", "HTML/CSS", "WordPress", "PHP"],
     },
-  ]
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { x: -20, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+  };
 
   return (
-    <section id="experience" className="py-16">
-      <h2 className="section-heading">Experience</h2>
-      <div className="space-y-6">
+    <motion.section
+      id="experience"
+      className="py-16"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={containerVariants}
+    >
+      <motion.h2 className="section-heading" variants={itemVariants}>
+        Experience
+      </motion.h2>
+      <motion.div className="space-y-6" variants={containerVariants}>
         {experiences.map((exp, index) => (
-          <Card key={index}>
-            <CardHeader>
-              <div className="flex justify-between items-start">
-                <div>
-                  <CardTitle>{exp.title}</CardTitle>
-                  <CardDescription>{exp.company}</CardDescription>
-                </div>
-                <span className="text-sm text-muted-foreground">{exp.period}</span>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="mb-4">{exp.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {exp.technologies.map((tech) => (
-                  <span key={tech} className="px-2 py-1 text-xs rounded-md bg-secondary text-secondary-foreground">
-                    {tech}
+          <motion.div key={index} variants={itemVariants}>
+            <Card>
+              <CardHeader>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <CardTitle>{exp.title}</CardTitle>
+                    <CardDescription>{exp.company}</CardDescription>
+                  </div>
+                  <span className="text-sm text-muted-foreground">
+                    {exp.period}
                   </span>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4">{exp.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {exp.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-1 text-xs rounded-md bg-secondary text-secondary-foreground"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
         ))}
-      </div>
-    </section>
-  )
+      </motion.div>
+    </motion.section>
+  );
 }
-

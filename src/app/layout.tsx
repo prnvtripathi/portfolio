@@ -38,11 +38,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="flex min-h-screen flex-col md:flex-row">
+          <div className="flex min-h-screen flex-col">
             <Sidebar />
-            <div className="flex flex-1 flex-col">
+            <div className="md:pl-16">
               <Navbar />
-              <main className="flex-1">{children}</main>
+              <main className="">{children}</main>
             </div>
           </div>
         </ThemeProvider>
@@ -50,5 +50,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-import "./globals.css";
