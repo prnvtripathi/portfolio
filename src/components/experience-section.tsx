@@ -8,32 +8,36 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export function ExperienceSection() {
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Innovations Inc.",
-      period: "2021 - Present",
+      title: "Full Stack Developer & DevOps Intern",
+      company: "Soundverse AI",
+      website: "https://soundverse.ai",
+      period: "June 24 - Present",
       description:
-        "Lead the frontend development team in building a SaaS platform. Implemented new features, improved performance, and mentored junior developers.",
-      technologies: ["React", "TypeScript", "Next.js", "GraphQL"],
+        "Developed and maintained the company's web application. Implemented CI/CD pipelines and automated deployment processes.",
+      technologies: [
+        "JavaScript",
+        "Next.js",
+        "FastAPI",
+        "Redis",
+        "GKE",
+        "Docker",
+        "GCloud",
+      ],
     },
     {
-      title: "Full Stack Developer",
-      company: "Digital Solutions Ltd.",
-      period: "2018 - 2021",
+      title: "Full Stack Developer Intern",
+      company: "Campaigning Source",
+      website: "https://campaigningsource.com",
+      period: "Aug 2023 - June 2024",
       description:
-        "Developed and maintained multiple web applications. Collaborated with designers and product managers to deliver high-quality software solutions.",
-      technologies: ["Vue.js", "Node.js", "Express", "MongoDB"],
-    },
-    {
-      title: "Web Developer",
-      company: "Creative Agency",
-      period: "2016 - 2018",
-      description:
-        "Created responsive websites for clients across various industries. Worked closely with the design team to implement pixel-perfect designs.",
-      technologies: ["JavaScript", "HTML/CSS", "WordPress", "PHP"],
+        "Developed and maintained multiple web applications. Collaborated with designers and product managers to deliver high-quality software solutions to various clients.",
+      technologies: ["Next.js", "React", "Node.js", "Express", "MongoDB"],
     },
   ];
 
@@ -79,7 +83,17 @@ export function ExperienceSection() {
                 <div className="flex justify-between items-start">
                   <div>
                     <CardTitle>{exp.title}</CardTitle>
-                    <CardDescription>{exp.company}</CardDescription>
+                    <Link
+                      href={exp.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:underline hover:underline-offset-4 w-fit group"
+                    >
+                      <CardDescription className="flex items-center gap-1">
+                        {exp.company}
+                        <ArrowUpRight className="w-4 h-4 hidden group-hover:flex" />
+                      </CardDescription>
+                    </Link>
                   </div>
                   <span className="text-sm text-muted-foreground">
                     {exp.period}

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
+import { DirectionAwareHover } from "./ui/direction-aware-hover";
 
 export function HeroSection() {
   return (
@@ -30,7 +31,7 @@ export function HeroSection() {
           animate={{ y: 0 }}
           transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
         >
-          Full Stack Developer & UI/UX Designer
+          Full Stack Developer
         </motion.p>
         <motion.div
           className="flex gap-4 justify-center md:justify-start"
@@ -54,13 +55,14 @@ export function HeroSection() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.6, type: "spring", stiffness: 100 }}
       >
-        <Image
+        {/* <Image
           src="https://avatars.githubusercontent.com/u/111558974"
           alt="Pranav Tripathi"
           width={400}
           height={400}
           className="rounded shadow-lg"
-        />
+        /> */}
+        <DirectionAwareHover imageUrl="/images/me.jpg" />
       </motion.div>
 
       {/* Scroll Down Indicator */}

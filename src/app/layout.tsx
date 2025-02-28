@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Sidebar } from "@/components/sidebar";
 import { Navbar } from "@/components/navbar";
 import { Toaster } from "sonner";
+import Footer from "@/components/footer";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -26,10 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}
+        className={cn("bg-background font-sans antialiased", fontSans.variable)}
       >
         <Toaster />
         <ThemeProvider
@@ -43,6 +41,7 @@ export default function RootLayout({
             <div className="md:pl-16">
               <Navbar />
               <main className="">{children}</main>
+              <Footer />
             </div>
           </div>
         </ThemeProvider>

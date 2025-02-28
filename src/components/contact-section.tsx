@@ -14,6 +14,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { toast } from "sonner";
 import { motion } from "motion/react";
+import CalComButton from "./cal-component";
 
 export function ContactSection() {
   const [email, setEmail] = useState("");
@@ -102,7 +103,7 @@ export function ContactSection() {
                     rows={5}
                   />
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full" variant={"secondary"}>
                   Send Message
                 </Button>
               </form>
@@ -110,7 +111,7 @@ export function ContactSection() {
           </Card>
         </motion.div>
 
-        <motion.div variants={itemVariants}>
+        <motion.div variants={itemVariants} className="space-y-8">
           <Card>
             <CardHeader>
               <CardTitle>Newsletter</CardTitle>
@@ -137,11 +138,25 @@ export function ContactSection() {
                     required
                   />
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" variant={"secondary"} className="md:w-1/3 w-full mt-2 md:mt-0">
                   Subscribe
                 </Button>
               </form>
             </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="flex md:flex-row flex-col items-center justify-between">
+              <div className="space-y-2">
+                <CardTitle>
+                  Want to chat?{" "}
+                  <span className="text-primary">Let's connect!</span>
+                </CardTitle>
+                <CardDescription>
+                  Feel free to book a call with me to discuss your project.
+                </CardDescription>
+              </div>
+              <CalComButton />
+            </CardHeader>
           </Card>
         </motion.div>
       </motion.div>
