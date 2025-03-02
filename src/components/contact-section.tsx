@@ -1,7 +1,7 @@
 "use client";
 
 import type React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "./ui/button";
 import {
   Card,
@@ -15,14 +15,47 @@ import { Textarea } from "./ui/textarea";
 import { toast } from "sonner";
 import { motion } from "motion/react";
 import CalComButton from "./cal-component";
+import { ArrowRightIcon } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export function ContactSection() {
   const [email, setEmail] = useState("");
+  const form = useRef<HTMLFormElement>(null);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success("Successfully subscribed to the newsletter!");
     setEmail("");
+  };
+
+  interface EmailJSResponseStatus {
+    text: string;
+  }
+
+  interface EmailJSParams {
+    publicKey: string;
+  }
+
+  const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_o1b9i7m",
+        "template_pdd27nv",
+        form.current as HTMLFormElement,
+        { publicKey: "-AeaiHrYYlm043wqv" } as EmailJSParams
+      )
+      .then(
+        () => {
+          toast.success("Message sent successfully!");
+          form.current?.reset();
+        },
+        (error: EmailJSResponseStatus) => {
+          toast.error("Failed to send message. Please try again.");
+          console.error(error.text);
+        }
+      );
   };
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -72,26 +105,39 @@ export function ContactSection() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4">
+              <form className="space-y-4" ref={form} onSubmit={submitForm}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium">
+                    <label htmlFor="from_name" className="text-sm font-medium">
                       Name
                     </label>
-                    <Input id="name" placeholder="Your name" />
+                    <Input
+                      id="from_name"
+                      name="from_name"
+                      placeholder="Your name"
+                    />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium">
+                    <label htmlFor="from_email" className="text-sm font-medium">
                       Email
                     </label>
-                    <Input id="email" type="email" placeholder="Your email" />
+                    <Input
+                      id="from_email"
+                      name="from_email"
+                      type="email"
+                      placeholder="Your email"
+                    />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="subject" className="text-sm font-medium">
                     Subject
                   </label>
-                  <Input id="subject" placeholder="Project inquiry" />
+                  <Input
+                    id="subject"
+                    name="subject"
+                    placeholder="Project inquiry"
+                  />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium">
@@ -99,12 +145,20 @@ export function ContactSection() {
                   </label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="Tell me about your project..."
                     rows={5}
                   />
                 </div>
-                <Button type="submit" className="w-full" variant={"secondary"}>
-                  Send Message
+                <Button
+                  type="submit"
+                  effect={"expandIcon"}
+                  icon={ArrowRightIcon}
+                  iconPlacement="right"
+                  variant={"secondary"}
+                  className="w-full mt-2 md:mt-0"
+                >
+                  Submit
                 </Button>
               </form>
             </CardContent>
@@ -138,7 +192,14 @@ export function ContactSection() {
                     required
                   />
                 </div>
-                <Button type="submit" variant={"secondary"} className="md:w-1/3 w-full mt-2 md:mt-0">
+                <Button
+                  type="submit"
+                  effect={"expandIcon"}
+                  icon={ArrowRightIcon}
+                  iconPlacement="right"
+                  variant={"secondary"}
+                  className="md:w-1/3 w-full mt-2 md:mt-0"
+                >
                   Subscribe
                 </Button>
               </form>

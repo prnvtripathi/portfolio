@@ -1,6 +1,7 @@
 import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 import { Button } from "./ui/button";
+import { Video } from "lucide-react";
 export default function CalComButton() {
   useEffect(() => {
     (async function () {
@@ -21,6 +22,9 @@ export default function CalComButton() {
       data-cal-link="prnvtripathi/intro"
       data-cal-config='{"layout":"month_view","theme":"auto"}'
       className="md:w-1/3 w-full mt-2 md:mt-0"
+      effect={"expandIcon"}
+      icon={Video}
+      iconPlacement="right"
       variant={"secondary"}
     >
       Book a call!

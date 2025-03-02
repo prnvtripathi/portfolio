@@ -13,7 +13,7 @@ export function Navbar() {
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Projects", href: "#projects" },
+    { name: "Projects", href: "/projects" },
     { name: "Experience", href: "#experience" },
     { name: "Contact", href: "#contact" },
   ];
@@ -23,7 +23,7 @@ export function Navbar() {
       <div className="flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
           <Link href="/" className="font-bold text-xl px-12">
-            Portfolio
+            PrnvTripathi
           </Link>
         </div>
 
