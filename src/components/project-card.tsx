@@ -22,7 +22,7 @@ interface ProjectCardProps {
     description: string;
     image: string;
     skills: string[];
-    liveUrl: string;
+    liveUrl?: string;
     githubUrl: string;
   };
 }
