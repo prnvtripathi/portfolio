@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { socialLinks } from "@/data/social-links";
-import { ThemeToggle } from "./theme-toggle";
 
 export function Sidebar() {
   return (

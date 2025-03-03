@@ -17,6 +17,7 @@ import { motion } from "motion/react";
 import CalComButton from "./cal-component";
 import { ArrowRightIcon } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { Label } from "./ui/label";
 
 export function ContactSection() {
   const [email, setEmail] = useState("");
@@ -108,9 +109,9 @@ export function ContactSection() {
               <form className="space-y-4" ref={form} onSubmit={submitForm}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label htmlFor="from_name" className="text-sm font-medium">
+                    <Label htmlFor="from_name" className="text-sm font-medium">
                       Name
-                    </label>
+                    </Label>
                     <Input
                       id="from_name"
                       name="from_name"
@@ -118,9 +119,9 @@ export function ContactSection() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="from_email" className="text-sm font-medium">
+                    <Label htmlFor="from_email" className="text-sm font-medium">
                       Email
-                    </label>
+                    </Label>
                     <Input
                       id="from_email"
                       name="from_email"
@@ -130,9 +131,9 @@ export function ContactSection() {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium">
+                  <Label htmlFor="subject" className="text-sm font-medium">
                     Subject
-                  </label>
+                  </Label>
                   <Input
                     id="subject"
                     name="subject"
@@ -140,9 +141,9 @@ export function ContactSection() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium">
+                  <Label htmlFor="message" className="text-sm font-medium">
                     Message
-                  </label>
+                  </Label>
                   <Textarea
                     id="message"
                     name="message"
