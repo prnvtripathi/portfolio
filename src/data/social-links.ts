@@ -1,6 +1,11 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Newspaper } from "lucide-react";
 
 export const socialLinks = [
+  {
+    name: "Blogs",
+    href: "https://blogs.pranavtripathi.me",
+    icon: Newspaper,
+  },
   {
     name: "GitHub",
     href: "https://github.com/prnvtripathi",
