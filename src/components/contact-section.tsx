@@ -167,7 +167,7 @@ export function ContactSection() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="space-y-8">
-          <Card>
+          {/* <Card>
             <CardHeader>
               <CardTitle>Newsletter</CardTitle>
               <CardDescription>
@@ -205,9 +205,11 @@ export function ContactSection() {
                 </Button>
               </form>
             </CardContent>
-          </Card>
-          <Card>
-            <CardHeader className="flex md:flex-row flex-col items-center justify-between">
+          </Card> */}
+          {/* <Card> */}
+          <Card className="flex flex-col">
+            {/* <CardHeader className="flex md:flex-row flex-col items-center justify-between"> */}
+            <CardHeader className="flex flex-col items-center justify-between">
               <div className="space-y-2">
                 <CardTitle>
                   Want to chat?{" "}
@@ -217,8 +219,11 @@ export function ContactSection() {
                   Feel free to book a call with me to discuss your project.
                 </CardDescription>
               </div>
-              <CalComButton />
+              {/* <CalComButton /> */}
             </CardHeader>
+            <CardContent className="flex justify-center">
+              <CalComButton />
+            </CardContent>
           </Card>
         </motion.div>
       </motion.div>
