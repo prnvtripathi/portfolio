@@ -26,7 +26,7 @@ export function Sidebar() {
                     rel="noopener noreferrer"
                   >
                     <Button variant="ghost" size="icon" aria-label={link.name}>
-                      <link.icon className="h-5 w-5" />
+                      <link.icon className={`h-5 w-5 ${link.isNewBlog ? "animate-wiggle" : "" }`} />
                     </Button>
                   </Link>
                 </TooltipTrigger>
