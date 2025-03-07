@@ -147,6 +147,7 @@ export function ContactSection() {
                   <Textarea
                     id="message"
                     name="message"
+                    className="resize-none"
                     placeholder="Tell me about your project..."
                     rows={5}
                   />
