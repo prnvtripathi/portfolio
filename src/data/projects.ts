@@ -6,7 +6,7 @@ export const projects = [
       "An automated API testing framework with Next.js frontend and Go backend.",
     image: "/projects/trafix.png",
     skills: ["Next.js", "Golang", "MongoDB", "Kestra", "Redis"],
-    // liveUrl: "#",
+    liveUrl: "https://trafix.kyrexi.tech",
     githubUrl: "https://github.com/kyrexi/trafix",
   },
   {
