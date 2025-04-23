@@ -28,6 +28,16 @@ export const projects = [
     githubUrl: "https://github.com/prnvtripathi/captions-gen",
   },
   {
+    id: 14,
+    name: "quill | A simple note-taking app with AI",
+    description:
+      "A simple note-taking app with AI capabilities, allowing users to create and manage notes effortlessly.",
+    image: "/projects/quill.png",
+    skills: ["Next.js", "Supabase", "React Query", "Tailwind CSS"],
+    liveUrl: "https://quill-noter.vercel.app",
+    githubUrl: "https://github.com/prnvtripathi/quill",
+  },
+  {
     id: 3,
     name: "GoalPost",
     description:
