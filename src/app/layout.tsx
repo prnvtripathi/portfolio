@@ -8,6 +8,7 @@ import { Sidebar } from "@/components/sidebar";
 import { Navbar } from "@/components/navbar";
 import { Toaster } from "sonner";
 import Footer from "@/components/footer";
+import VisitorCounter from "@/components/visitor-count";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -41,6 +42,9 @@ export default function RootLayout({
             <div className="md:pl-16">
               <Navbar />
               <main className="">{children}</main>
+              <div className="fixed bottom-4 left-20 z-10">
+                <VisitorCounter />
+              </div>
               <Footer />
             </div>
           </div>

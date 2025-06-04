@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowDown } from "lucide-react";
-import Image from "next/image";
 import { DirectionAwareHover } from "./ui/direction-aware-hover";
 
 export function HeroSection() {
