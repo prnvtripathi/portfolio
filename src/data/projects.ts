@@ -1,3 +1,5 @@
+// next project id will be 16
+
 export const projects = [
   {
     id: 2,
@@ -56,6 +58,15 @@ export const projects = [
     skills: ["React", "Node.js", "AWS Transcribe", "Tailwind CSS"],
     liveUrl: "https://one-crm.vercel.app/",
     githubUrl: "https://github.com/Ishaan2053/Next-gen-CRM--Ishaan-",
+  },
+  {
+    id: 15,
+    name: "Semantic Book Recommender",
+    description:
+      "A book recommendation system that uses semantic search to find books based on user queries, finding similar books using vector embeddings.",
+    image: "/projects/bookrecommender.png",
+    skills: ["Python", "Gradio", "LangChain", "ChromaDB", "OpenAI"],
+    githubUrl: "https://github.com/prnvtripathi/book-recommender",
   },
   {
     id: 11,
