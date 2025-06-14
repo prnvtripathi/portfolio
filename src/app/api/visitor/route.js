@@ -10,6 +10,9 @@ const headers = {
 }
 
 export async function POST() {
+    if (process.env.ENV && process.env.ENV !== 'production') {
+        return NextResponse.json({ count: 0 }, { status: 200 });
+    }
     // Step 1: Get current Gist content
     const gistRes = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
         headers
