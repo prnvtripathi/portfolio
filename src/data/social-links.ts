@@ -26,7 +26,7 @@ export const socialLinks = [
   },
   {
     name: "Peerlist",
-    href: "https://peerlist.com/pranavtripathi",
+    href: "https://peerlist.io/pranavtripathi",
     icon: SiPeerlist,
   },
   {
