@@ -2,11 +2,11 @@
 
 import React, { useEffect, useState } from "react";
 import { Eye } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { NumberTicker } from "@/components/ui/number-ticker";
 
 export default function VisitorCounter() {
   const [count, setCount] = useState<number | null>(null);
-  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     async function getVisitorCount() {
@@ -27,33 +27,40 @@ export default function VisitorCounter() {
   }, []);
 
   return (
-    <motion.div
-      className="inline-flex items-center px-2 py-1.5 bg-gray-100 dark:bg-gray-800 rounded-full text-sm text-gray-600 dark:text-gray-300 mb-2 cursor-pointer"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      initial={false}
-      animate={{
-        paddingLeft: hovered ? 12 : 8,
-        paddingRight: hovered ? 12 : 8,
-      }}
-      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
-    >
-      <Eye className="w-4 h-4 flex-shrink-0" />
+    <Card className="w-full">
+      <CardContent className="p-4">
+        <div className="flex items-center space-x-3">
+          <div className="flex items-center justify-center w-10 h-10 rounded-full">
+            <Eye className="w-5 h-5" />
+          </div>
 
-      <AnimatePresence>
-        {hovered && count !== null && (
-          <motion.span
-            key="visitor-count"
-            className="ml-2 whitespace-nowrap"
-            initial={{ opacity: 0, x: -6 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -6 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
-            {count.toLocaleString()} visitors
-          </motion.span>
-        )}
-      </AnimatePresence>
-    </motion.div>
+          <div className="flex flex-row justify-between items-center w-full">
+            <h3 className="font-semibold text-gray-900 dark:text-gray-100">
+              Site Visitors
+            </h3>
+
+            {count !== null ? (
+              <NumberTicker
+                value={count}
+                className="text-lg font-bold text-gray-900 dark:text-gray-100"
+                delay={1}
+              />
+            ) : (
+              <div className="flex items-center space-x-1">
+                <div className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"></div>
+                <div
+                  className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"
+                  style={{ animationDelay: "0.2s" }}
+                ></div>
+                <div
+                  className="w-2 h-2 bg-gray-400 rounded-full animate-pulse"
+                  style={{ animationDelay: "0.4s" }}
+                ></div>
+              </div>
+            )}
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 }

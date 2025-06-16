@@ -18,6 +18,7 @@ import CalComButton from "./cal-component";
 import { ArrowRightIcon } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { Label } from "./ui/label";
+import VisitorCounter from "./visitor-count";
 
 export function ContactSection() {
   const [email, setEmail] = useState("");
@@ -74,7 +75,7 @@ export function ContactSection() {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
       },
     },
@@ -168,46 +169,6 @@ export function ContactSection() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="space-y-8">
-          {/* <Card>
-            <CardHeader>
-              <CardTitle>Newsletter</CardTitle>
-              <CardDescription>
-                Subscribe to my newsletter to receive updates on new projects,
-                blog posts, and more.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubscribe} className="space-y-4">
-                <div className="space-y-2">
-                  <label
-                    htmlFor="newsletter-email"
-                    className="text-sm font-medium"
-                  >
-                    Email
-                  </label>
-                  <Input
-                    id="newsletter-email"
-                    type="email"
-                    placeholder="your.email@example.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  effect={"expandIcon"}
-                  icon={ArrowRightIcon}
-                  iconPlacement="right"
-                  variant={"secondary"}
-                  className="md:w-1/3 w-full mt-2 md:mt-0"
-                >
-                  Subscribe
-                </Button>
-              </form>
-            </CardContent>
-          </Card> */}
-          {/* <Card> */}
           <Card className="flex flex-col">
             {/* <CardHeader className="flex md:flex-row flex-col items-center justify-between"> */}
             <CardHeader className="flex flex-col items-center justify-between">
@@ -226,6 +187,7 @@ export function ContactSection() {
               <CalComButton />
             </CardContent>
           </Card>
+          <VisitorCounter />
         </motion.div>
       </motion.div>
     </motion.section>
