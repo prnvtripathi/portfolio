@@ -11,11 +11,11 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
+    { name: "Blogs", href: "https://blogs.pranavtripathi.me" },
+    { name: "About", href: "/#about" },
     { name: "Projects", href: "/projects" },
-    { name: "Experience", href: "#experience" },
-    { name: "Contact", href: "#contact" },
+    { name: "Experience", href: "/#experience" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (

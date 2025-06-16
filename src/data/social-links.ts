@@ -1,8 +1,10 @@
-import { Github, Linkedin, Twitter, Mail, Newspaper } from "lucide-react";
+import { Mail, Newspaper } from "lucide-react";
+import { SiPeerlist } from "react-icons/si";
+import { FaXTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 export const socialLinks = [
   {
-    isNewBlog: true,
+    isNewBlog: false,
     name: "Blogs",
     href: "https://blogs.pranavtripathi.me",
     icon: Newspaper,
@@ -10,17 +12,22 @@ export const socialLinks = [
   {
     name: "GitHub",
     href: "https://github.com/prnvtripathi",
-    icon: Github,
+    icon: FaGithub,
   },
   {
     name: "LinkedIn",
     href: "https://linkedin.com/in/tripathipranav14",
-    icon: Linkedin,
+    icon: FaLinkedinIn,
   },
   {
     name: "Twitter",
     href: "https://twitter.com/prnvtwts",
-    icon: Twitter,
+    icon: FaXTwitter,
+  },
+  {
+    name: "Peerlist",
+    href: "https://peerlist.com/pranavtripathi",
+    icon: SiPeerlist,
   },
   {
     name: "Email",
