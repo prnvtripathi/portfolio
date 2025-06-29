@@ -17,7 +17,7 @@ export function ExperienceSection() {
       title: "Full Stack Developer & DevOps Intern",
       company: "Soundverse AI",
       website: "https://soundverse.ai",
-      period: "June 24 - Present",
+      period: "June '24 - May '25",
       description:
         "Developed and maintained the company's web application. Implemented CI/CD pipelines and automated deployment processes.",
       technologies: [
@@ -34,7 +34,7 @@ export function ExperienceSection() {
       title: "Full Stack Developer Intern",
       company: "Campaigning Source",
       website: "https://campaigningsource.com",
-      period: "Aug 2023 - June 2024",
+      period: "Aug '23 - June '24",
       description:
         "Developed and maintained multiple web applications. Collaborated with designers and product managers to deliver high-quality software solutions to various clients.",
       technologies: ["Next.js", "React", "Node.js", "Express", "MongoDB"],
