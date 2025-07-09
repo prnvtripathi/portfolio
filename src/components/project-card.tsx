@@ -14,18 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Github, Link2 } from "lucide-react";
 import Link from "next/link";
-
-interface ProjectCardProps {
-  project: {
-    id: number;
-    name: string;
-    description: string;
-    image: string;
-    skills: string[];
-    liveUrl?: string;
-    githubUrl: string;
-  };
-}
+import { Project, ProjectCardProps } from "@/types";
 
 const itemVariants = {
   hidden: { y: 20, opacity: 0 },
@@ -40,36 +29,45 @@ const itemVariants = {
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  // Use title if name is not available
+  const projectName = project.name || project.title;
+  // Use image if imageUrl is not available and vice versa
+  const imageSrc = project.image || project.imageUrl || '';
+  // Use tags if skills is not available
+  const skills = project.skills || project.tags || [];
+
   return (
     <motion.div
-      className="overflow-hidden flex flex-col h-full"
       variants={itemVariants}
+      className="h-full"
     >
-      <Card className="overflow-hidden flex flex-col h-full">
-        <motion.div
-          className="relative h-48 w-full"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
+      <Card className="h-full flex flex-col overflow-hidden hover:shadow-lg transition-shadow">
+        <div className="relative h-48 overflow-hidden">
           <Image
-            src={project.image || "/placeholder.svg"}
-            alt={project.name}
+            src={imageSrc}
+            alt={projectName}
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-300 hover:scale-105"
           />
-        </motion.div>
+        </div>
         <CardHeader>
-          <CardTitle>{project.name}</CardTitle>
-          <CardDescription>{project.description}</CardDescription>
+          <CardTitle className="text-xl font-bold">
+            {projectName}
+          </CardTitle>
+          <CardDescription className="line-clamp-2">
+            {project.description}
+          </CardDescription>
         </CardHeader>
-        <CardContent className="flex-grow">
-          <div className="flex flex-wrap gap-2">
-            {project.skills.map((skill) => (
-              <Badge key={skill} variant="secondary">
-                {skill}
-              </Badge>
-            ))}
-          </div>
+        <CardContent className="flex-1">
+          {skills.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-4">
+              {skills.map((skill: string) => (
+                <Badge key={skill} variant="secondary">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          )}
         </CardContent>
         <CardFooter className="flex gap-2">
           {project.liveUrl && (

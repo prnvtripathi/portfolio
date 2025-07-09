@@ -1,6 +1,6 @@
 "use server";
 
-import { Post } from "@/types/hashnode-posts";
+import { Post } from "@/types/hashnode-posts.types";
 
 interface Tag {
   name: string;

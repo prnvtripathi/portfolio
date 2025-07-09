@@ -2,22 +2,7 @@ import { motion } from "motion/react";
 import { Calendar, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-
-interface BlogPost {
-    title: string;
-    brief: string;
-    url: string;
-    publishedAt: string;
-    coverImage?: {
-        url: string;
-    };
-    tags?: string[];
-    source?: "local" | "hashnode";
-}
-
-interface BlogListProps {
-    posts: BlogPost[];
-}
+import { BlogPost, BlogListProps } from "@/types";
 
 export function BlogList({ posts }: BlogListProps) {
     const listVariants = {

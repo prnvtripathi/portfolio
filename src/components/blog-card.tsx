@@ -3,18 +3,7 @@ import { Calendar, ExternalLink } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-
-interface BlogPost {
-    title: string;
-    brief: string;
-    url: string;
-    publishedAt: string;
-    coverImage?: {
-        url: string;
-    };
-    tags?: string[];
-    source?: "local" | "hashnode";
-}
+import { BlogPost } from "@/types";
 
 interface BlogCardProps {
     post: BlogPost;

@@ -23,18 +23,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-
-interface BlogPost {
-    title: string;
-    brief: string;
-    url: string;
-    publishedAt: string;
-    coverImage?: {
-        url: string;
-    };
-    tags?: string[];
-    source: "local" | "hashnode";
-}
+import { BlogPost } from "@/types";
 
 interface BlogsPageClientProps {
     initialPosts: BlogPost[];
