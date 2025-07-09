@@ -2,7 +2,7 @@
 title: "Dreams and Their Meanings"
 date: "2025-07-09"
 description: "Do dreams have meanings? or are they just random images? This is my understanding after reading the The Interpretation of Dreams by Sigmund Freud."
-tags: ["dreams", "psychology", "psychoanalysis"]
+tags: ["Dreams", "Psychology", "Psychoanalysis"]
 coverImage: "/cover-images/dream-psychology.jpg"
 author: "Pranav Tripathi"
 ---

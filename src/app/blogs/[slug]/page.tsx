@@ -3,15 +3,23 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+type Props = {
+    params: {
+        slug: string;
+    };
+};
+
 
 export async function generateStaticParams() {
     const slugs = getAllPostSlugs();
     return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
-    const post = getPostBySlug(slug);
+    const post =  await getPostBySlug(slug);
     if (!post) return {};
     return {
         title: post.meta.title,
@@ -19,9 +27,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default async function BlogPage({ params }: { params: { slug: string } }) {
+export default async function BlogPage({ params }: Props) {
     const { slug } = await params;
-    const post = getPostBySlug(slug);
+    const post =  await getPostBySlug(slug);
 
     if (!post) return notFound();
 

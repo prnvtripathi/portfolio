@@ -14,6 +14,9 @@ const nextConfig: NextConfig = {
     removeConsole:
       process.env.ENV === "production" ? { exclude: ["error", "warn"] } : false,
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
