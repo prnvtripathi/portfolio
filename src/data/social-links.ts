@@ -6,7 +6,7 @@ export const socialLinks = [
   {
     isNewBlog: false,
     name: "Blogs",
-    href: "https://blogs.pranavtripathi.me",
+    href: "/blogs",
     icon: Newspaper,
   },
   {
