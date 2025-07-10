@@ -9,7 +9,7 @@ author: "Pranav Tripathi"
 
 ## My Journey into Dream Psychology
 
-A few days ago, I found myself fascinated by the mysteries of the human brain—especially the strange, vivid world of dreams. For the longest time, I believed dreams were just random, meaningless images and thoughts, a kind of mental static with no real connection to my daily life. That changed when a friend recommended I read **Dream Psychology** by Sigmund Freud. Little did I know, this book would completely shift my understanding of what dreams really are.
+A few days ago, I found myself fascinated by the mysteries of the human brain—especially the strange, vivid world of dreams. For the longest time, I believed dreams were just random, meaningless images and thoughts, a kind of mental static with no real connection to my daily life. That changed when my sister recommended me to read **Dream Psychology** by Sigmund Freud. Little did I know, this book would completely shift my understanding of what dreams really are.
 
 ![A gif of a sleeping cat](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXp4cndlYzJlMzB2Y292cGMzMXE2c2Rib3B3cTF1N29yMjRwOGcwYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3LZdeA8IiUJa/giphy.gif)
 
