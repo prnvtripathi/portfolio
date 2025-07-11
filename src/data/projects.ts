@@ -1,4 +1,4 @@
-// next project id will be 16
+// next project id will be 17
 
 export const projects = [
   {
@@ -38,6 +38,15 @@ export const projects = [
     skills: ["Next.js", "Supabase", "React Query", "Tailwind CSS"],
     liveUrl: "https://quill-noter.vercel.app",
     githubUrl: "https://github.com/prnvtripathi/quill",
+  },
+  {
+    id: 16,
+    name: "Dependency Visualizer",
+    description:
+      "A CLI using Golang to visualize dependencies in a project, generating a tree structure of dependencies and their relationships.",
+    image: "/projects/deps-tree.png",
+    skills: ["Golang", "CLI", "Cobra"],
+    githubUrl: "https://github.com/prnvtripathi/dep-tree-visualizer",
   },
   {
     id: 3,
