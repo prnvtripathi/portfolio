@@ -3,12 +3,12 @@
 export const projects = [
   {
     id: 2,
-    name: "Trafix",
+    name: "Trafyx",
     description:
       "An automated API testing framework with Next.js frontend and Go backend.",
     image: "/projects/trafix.png",
     skills: ["Next.js", "Golang", "MongoDB", "Kestra", "Redis"],
-    liveUrl: "https://trafix.kyrexi.tech",
+    liveUrl: "https://trafyx.kyrexi.tech",
     githubUrl: "https://github.com/kyrexi/trafix",
   },
   {
