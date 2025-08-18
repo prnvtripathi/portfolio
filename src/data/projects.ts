@@ -1,4 +1,4 @@
-// next project id will be 17
+// next project id will be 19
 
 export const projects = [
   {
@@ -38,6 +38,26 @@ export const projects = [
     skills: ["Next.js", "Supabase", "React Query", "Tailwind CSS"],
     liveUrl: "https://quill-noter.vercel.app",
     githubUrl: "https://github.com/prnvtripathi/quill",
+  },
+  {
+    id: 17,
+    name: "colorfool",
+    description:
+      "Want to change color formats?? From rgb to hex to okhsl, colorfool has got you covered.",
+    image: "/projects/colorfool.png",
+    skills: ["Next.js", "TailwindCSS", "Shadcn", "Culori"],
+    liveUrl: "https://colorfool.kyrexi.tech",
+    githubUrl: "https://github.com/prnvtripathi/colorfool",
+  },
+  {
+    id: 18,
+    name: "JXON | Text to JSON Prompts",
+    description:
+      "A tool to convert text prompts into JSON format, making it easier to work with structured data.",
+    image: "/projects/jxon.png",
+    skills: ["Next.js", "TailwindCSS", "Shadcn", "Culori"],
+    liveUrl: "https://jxon.kyrexi.tech",
+    githubUrl: "https://github.com/prnvtripathi/json-prompter",
   },
   {
     id: 16,
