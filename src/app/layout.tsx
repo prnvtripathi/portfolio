@@ -8,6 +8,7 @@ import { Sidebar } from "@/components/sidebar";
 import { Navbar } from "@/components/navbar";
 import { Toaster } from "sonner";
 import Footer from "@/components/footer";
+import { Analytics } from "@vercel/analytics/next"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -40,7 +41,10 @@ export default function RootLayout({
             <Sidebar />
             <div className="md:pl-16">
               <Navbar />
-              <main className="">{children}</main>
+              <main className="">
+                {children}
+                <Analytics />
+              </main>
               <Footer />
             </div>
           </div>
