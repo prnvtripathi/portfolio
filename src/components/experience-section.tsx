@@ -14,6 +14,22 @@ import { ArrowUpRight } from "lucide-react";
 export function ExperienceSection() {
   const experiences = [
     {
+      title: "Full Stack Developer",
+      company: "Erzy Call",
+      website: "https://erzycall.com",
+      period: "June '25 - Present",
+      description:
+        "Implemented a unified ETA calculation system for truck logistics, enhancing delivery time estimates. Designed and maintained Telegram-based bots and backend services to streamline automated communication and support functions.",
+      technologies: [
+        "TypeScript",
+        "Next.js",
+        "NestJs",
+        "Telegram Bot API",
+        "OpenAI API",
+        "Google Maps API",
+      ],
+    },
+    {
       title: "Full Stack Developer & DevOps Intern",
       company: "Soundverse AI",
       website: "https://soundverse.ai",
@@ -78,7 +94,7 @@ export function ExperienceSection() {
       <motion.div className="space-y-6" variants={containerVariants}>
         {experiences.map((exp, index) => (
           <motion.div key={index} variants={itemVariants}>
-            <Card>
+            <Card className="hover:-translate-y-2 hover:border-4 transition-all duration-200 ease-in-out">
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <div>
