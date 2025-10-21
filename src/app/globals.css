@@ -197,3 +197,25 @@ html::-webkit-scrollbar-thumb {
   /* background-color: #e3e3e3; */
   @apply bg-primary border rounded;
 }
+
+/* --- Code block base styling --- */
+.prose pre {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem;
+  background: var(--color-secondary, #1e1e1e);
+  color: var(--color-secondary-foreground, #eaeaea);
+}
+
+/* Line highlighting (if used later) */
+.prose pre code {
+  font-family: "Fira Code", monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Copy button positioning helper */
+pre {
+  position: relative;
+}

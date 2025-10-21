@@ -1,9 +1,12 @@
 import { getPostBySlug, getAllPostSlugs } from '@/lib/posts';
 import { remark } from 'remark';
-import html from 'remark-html';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
+import rehypePrism from 'rehype-prism-plus';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { Metadata } from 'next';
+import CodeCopyButton from '@/components/copy-code-button';
 
 type Props = {
     params: {
@@ -19,7 +22,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
-    const post =  await getPostBySlug(slug);
+    const post = await getPostBySlug(slug);
     if (!post) return {};
     return {
         title: post.meta.title,
@@ -29,15 +32,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function BlogPage({ params }: Props) {
     const { slug } = await params;
-    const post =  await getPostBySlug(slug);
+    const post = await getPostBySlug(slug);
 
     if (!post) return notFound();
 
-    const processedContent = await remark().use(html).process(post.content);
+    const processedContent = await remark()
+        .use(remarkRehype)
+        .use(rehypePrism)
+        .use(rehypeStringify)
+        .process(post.content);
+
     const contentHtml = processedContent.toString();
 
     return (
         <div className="prose dark:prose-invert w-full md:min-w-4xl mx-auto pt-24 px-3">
+            <CodeCopyButton />
             {post.meta.coverImage && (
                 <Image
                     src={post.meta.coverImage}
