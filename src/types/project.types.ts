@@ -2,10 +2,10 @@
 
 export interface Project {
   id: string | number;
-  title: string;
+  title?: string;
   name?: string; // Alias for title
   description: string;
-  tags: string[];
+  tags?: string[];
   skills?: string[]; // Alias for tags
   image: string;
   imageUrl?: string; // Alias for image

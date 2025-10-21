@@ -45,7 +45,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="relative h-48 overflow-hidden">
           <Image
             src={imageSrc}
-            alt={projectName}
+            alt={projectName ?? "Project Image"}
             fill
             className="object-cover transition-transform duration-300 hover:scale-105"
           />
