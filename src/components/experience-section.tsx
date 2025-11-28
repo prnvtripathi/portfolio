@@ -14,10 +14,16 @@ import { ArrowUpRight } from "lucide-react";
 export function ExperienceSection() {
   const experiences = [
     {
+      title: "Full Stack Engineer",
+      company: "TractUs Labs",
+      website: "https://www.tractuslabs.com",
+      period: "Nov '25 - Present",
+    },
+    {
       title: "Full Stack Developer",
       company: "Erzy Call",
       website: "https://erzycall.com",
-      period: "June '25 - Present",
+      period: "June '25 - Nov '25",
       description:
         "Implemented a unified ETA calculation system for truck logistics, enhancing delivery time estimates. Designed and maintained Telegram-based bots and backend services to streamline automated communication and support functions.",
       technologies: [
@@ -117,9 +123,9 @@ export function ExperienceSection() {
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="mb-4">{exp.description}</p>
+                {exp.description && <p className="mb-4">{exp.description}</p>}
                 <div className="flex flex-wrap gap-2">
-                  {exp.technologies.map((tech) => (
+                  {exp.technologies?.map((tech) => (
                     <span
                       key={tech}
                       className="px-2 py-1 text-xs rounded-md bg-secondary text-secondary-foreground"
