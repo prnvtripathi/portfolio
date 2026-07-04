@@ -1,6 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { Mona_Sans as FontSans } from "next/font/google";
+import { Playfair_Display, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -10,9 +10,23 @@ import { Toaster } from "sonner";
 import Footer from "@/components/footer";
 import { Analytics } from "@vercel/analytics/next"
 
-const fontSans = FontSans({
+const fontSerif = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-sans",
+  style: ["normal", "italic"],
+  weight: ["400", "500"],
+  variable: "--font-playfair",
+});
+
+const fontSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  variable: "--font-dm-sans",
+});
+
+const fontMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-jetbrains-mono",
 });
 
 export const metadata: Metadata = {
@@ -26,27 +40,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn("bg-background font-sans antialiased", fontSans.variable)}
-      >
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(fontSerif.variable, fontSans.variable, fontMono.variable)}
+    >
+      <body className="bg-background font-sans font-light antialiased">
         <Toaster />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
         >
           <div className="flex min-h-screen flex-col">
             <Sidebar />
-            <div className="md:pl-16">
-              <Navbar />
-              <main className="">
-                {children}
-                <Analytics />
-              </main>
-              <Footer />
-            </div>
+            <Navbar />
+            <main>
+              {children}
+              <Analytics />
+            </main>
+            <Footer />
           </div>
         </ThemeProvider>
       </body>

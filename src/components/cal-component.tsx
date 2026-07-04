@@ -21,7 +21,7 @@ export default function CalComButton() {
       data-cal-namespace="intro"
       data-cal-link="prnvtripathi/intro"
       data-cal-config='{"layout":"month_view","theme":"auto"}'
-      className="md:w-1/3 w-full mt-2 md:mt-0"
+      className="md:w-2/3 w-full mt-2 md:mt-0"
       effect={"expandIcon"}
       icon={Video}
       iconPlacement="right"

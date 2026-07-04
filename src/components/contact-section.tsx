@@ -84,15 +84,18 @@ export function ContactSection() {
   return (
     <motion.section
       id="contact"
-      className="py-16"
+      className="border-t border-border py-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <motion.h2 className="section-heading" variants={itemVariants}>
-        Get in Touch
-      </motion.h2>
+      <motion.p
+        variants={itemVariants}
+        className="mb-9 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground"
+      >
+        05 / Contact
+      </motion.p>
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-8"
         variants={containerVariants}
@@ -100,7 +103,7 @@ export function ContactSection() {
         <motion.div variants={itemVariants}>
           <Card>
             <CardHeader>
-              <CardTitle>Work Inquiry</CardTitle>
+              <CardTitle className="font-serif">Work Inquiry</CardTitle>
               <CardDescription>
                 Have a project in mind? Let's discuss how I can help bring your
                 ideas to life.
@@ -173,7 +176,7 @@ export function ContactSection() {
             {/* <CardHeader className="flex md:flex-row flex-col items-center justify-between"> */}
             <CardHeader className="flex flex-col items-center justify-between">
               <div className="space-y-2">
-                <CardTitle>
+                <CardTitle className="font-serif">
                   Want to chat?{" "}
                   <span className="text-primary">Let's connect!</span>
                 </CardTitle>
