@@ -84,15 +84,18 @@ export function ContactSection() {
   return (
     <motion.section
       id="contact"
-      className="py-16"
+      className="border-t border-border py-20"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       variants={containerVariants}
     >
-      <motion.h2 className="section-heading" variants={itemVariants}>
-        Get in Touch
-      </motion.h2>
+      <motion.p
+        variants={itemVariants}
+        className="mb-9 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground"
+      >
+        05 / Contact
+      </motion.p>
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 gap-8"
         variants={containerVariants}
