@@ -1,41 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "./ui/button";
 import { socialLinks } from "@/data/social-links";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+
+const sidebarLinks = socialLinks.filter((link) => link.name !== "Email");
 
 export function Sidebar() {
   return (
-    <>
-      {/* Desktop Sidebar */}
-      <aside className="fixed top-0 left-0 h-screen md:flex hidden flex-col items-center w-16 border-r bg-background py-8 z-30">
-        <div className="flex flex-col items-center gap-4 mt-auto">
-          {socialLinks.map((link) => (
-            <TooltipProvider key={link.name} delayDuration={500}>
-              <Tooltip>
-                <TooltipTrigger>
-                  <Link
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button variant="ghost" size="icon" aria-label={link.name}>
-                      <link.icon className={`h-5 w-5 ${link.isNewBlog ? "animate-wiggle" : "" }`} />
-                    </Button>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="right">{link.name}</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          ))}
-        </div>
-      </aside>
-    </>
+    <div className="fixed bottom-0 left-6 z-30 hidden flex-col items-center gap-5 md:flex">
+      {sidebarLinks.map((link) => (
+        <Link
+          key={link.name}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rotate-180 font-mono text-[10px] tracking-[0.12em] text-muted-foreground transition-colors hover:translate-y-1 hover:text-primary [text-orientation:mixed] [writing-mode:vertical-rl]"
+        >
+          {link.name}
+        </Link>
+      ))}
+      <div className="mt-1 h-18 w-px bg-border" />
+    </div>
   );
 }
