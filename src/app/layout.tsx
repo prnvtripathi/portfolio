@@ -40,15 +40,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          "bg-background font-sans font-light antialiased",
-          fontSerif.variable,
-          fontSans.variable,
-          fontMono.variable
-        )}
-      >
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(fontSerif.variable, fontSans.variable, fontMono.variable)}
+    >
+      <body className="bg-background font-sans font-light antialiased">
         <Toaster />
         <ThemeProvider
           attribute="class"
