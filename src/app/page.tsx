@@ -3,12 +3,14 @@ import { ContactSection } from "@/components/contact-section"
 import { ExperienceSection } from "@/components/experience-section"
 import { HeroSection } from "@/components/hero-section"
 import { ProjectsSection } from "@/components/projects-section"
+import { SkillsSection } from "@/components/skills-section"
 
 export default function Home() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="mx-auto max-w-[720px] px-8">
       <HeroSection />
       <AboutSection />
+      <SkillsSection />
       <ExperienceSection />
       <ProjectsSection />
       <ContactSection />
