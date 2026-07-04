@@ -103,7 +103,7 @@ export function ContactSection() {
         <motion.div variants={itemVariants}>
           <Card>
             <CardHeader>
-              <CardTitle>Work Inquiry</CardTitle>
+              <CardTitle className="font-serif">Work Inquiry</CardTitle>
               <CardDescription>
                 Have a project in mind? Let's discuss how I can help bring your
                 ideas to life.
@@ -176,7 +176,7 @@ export function ContactSection() {
             {/* <CardHeader className="flex md:flex-row flex-col items-center justify-between"> */}
             <CardHeader className="flex flex-col items-center justify-between">
               <div className="space-y-2">
-                <CardTitle>
+                <CardTitle className="font-serif">
                   Want to chat?{" "}
                   <span className="text-primary">Let's connect!</span>
                 </CardTitle>

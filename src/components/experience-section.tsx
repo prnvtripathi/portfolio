@@ -9,6 +9,9 @@ const experiences = [
     company: "TractUs Labs",
     website: "https://www.tractuslabs.com",
     period: "Nov '25 - Present",
+    description:
+      "Developing AI Agents and experimenting with new tools to make the product better and reliable.",
+    technologies: ["Python", "Next.js", "AWS Lambda", "Docker"],
   },
   {
     title: "Full Stack Developer",
@@ -33,7 +36,15 @@ const experiences = [
     period: "June '24 - May '25",
     description:
       "Developed and maintained the company's web application. Implemented CI/CD pipelines and automated deployment processes.",
-    technologies: ["JavaScript", "Next.js", "FastAPI", "Redis", "GKE", "Docker", "GCloud"],
+    technologies: [
+      "JavaScript",
+      "Next.js",
+      "FastAPI",
+      "Redis",
+      "GKE",
+      "Docker",
+      "GCloud",
+    ],
   },
   {
     title: "Full Stack Developer Intern",

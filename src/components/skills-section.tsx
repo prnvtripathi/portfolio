@@ -32,9 +32,17 @@ export function SkillsSection() {
       <p className="mb-9 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
         02 / Skills
       </p>
-      <p className="font-mono text-[13px] leading-[2.1] tracking-wide text-muted-foreground">
-        {SKILLS.join(" · ")}
-      </p>
+      <div className="flex flex-row flex-wrap gap-x-3 gap-y-1">
+        {SKILLS.map((skill, index) => (
+          <p
+            key={index}
+            className="font-mono text-[13px] leading-[2.1] tracking-wide text-muted-foreground hover:text-foreground"
+          >
+            {skill}
+            {index < SKILLS.length - 1 && " · "}
+          </p>
+        ))}
+      </div>
     </motion.section>
   );
 }

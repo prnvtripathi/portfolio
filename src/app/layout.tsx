@@ -51,7 +51,6 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
         >
           <div className="flex min-h-screen flex-col">
             <Sidebar />
