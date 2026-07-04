@@ -1,80 +1,63 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Button } from "./ui/button";
-import { ArrowDown } from "lucide-react";
-import { DirectionAwareHover } from "./ui/direction-aware-hover";
+import { socialLinks } from "@/data/social-links";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 16 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
 
 export function HeroSection() {
+  const emailHref = socialLinks.find((link) => link.name === "Email")!.href;
+
   return (
     <motion.section
       id="home"
-      className="grid grid-cols-1 md:grid-cols-2 h-screen items-center px-6 md:px-16"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      className="pb-24 pt-[clamp(88px,12vh,136px)]"
+      initial="hidden"
+      animate="visible"
+      transition={{ staggerChildren: 0.08 }}
     >
-      {/* Left Content */}
-      <div className="text-center md:text-left">
-        <motion.h1
-          className="text-4xl md:text-6xl font-bold tracking-tight mb-4"
-          initial={{ y: -50 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
-        >
-          Hi, I'm <span className="text-primary">Pranav Tripathi</span>
-        </motion.h1>
-        <motion.p
-          className="text-xl md:text-2xl text-muted-foreground mb-8"
-          initial={{ y: 50 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 0.4, type: "spring", stiffness: 100 }}
-        >
-          Full Stack Developer
-        </motion.p>
-        <motion.div
-          className="flex gap-4 justify-center md:justify-start"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.6, type: "spring", stiffness: 100 }}
-        >
-          <Button asChild>
-            <a href="#contact">Get in Touch</a>
-          </Button>
-          <Button variant="outline" asChild>
-            <a href="#projects">View Projects</a>
-          </Button>
-        </motion.div>
-      </div>
-
-      {/* Right Content (Image) */}
-      <motion.div
-        className="flex justify-center md:justify-end"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.6, type: "spring", stiffness: 100 }}
+      <motion.p
+        variants={fadeUp}
+        className="mb-5 font-mono text-[11px] uppercase tracking-[0.12em] text-muted-foreground"
       >
-        {/* <Image
-          src="https://avatars.githubusercontent.com/u/111558974"
-          alt="Pranav Tripathi"
-          width={400}
-          height={400}
-          className="rounded shadow-lg"
-        /> */}
-        <DirectionAwareHover imageUrl="/images/me.jpg" />
+        Full Stack Developer
+      </motion.p>
+      <motion.h1
+        variants={fadeUp}
+        className="mb-7 font-serif text-[clamp(46px,7.5vw,74px)] leading-[1.07] tracking-[-0.01em] text-foreground"
+      >
+        Pranav
+        <br />
+        Tripathi
+      </motion.h1>
+      <motion.p
+        variants={fadeUp}
+        className="mb-10 max-w-[420px] text-base font-light leading-[1.75] text-muted-foreground"
+      >
+        Building fast, scalable web applications with clean architecture and a
+        thoughtful eye for user experience.
+      </motion.p>
+      <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
+        <a
+          href={emailHref}
+          className="rounded-full border border-primary px-6 py-2 text-[13px] font-medium tracking-wide text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+        >
+          Get in touch →
+        </a>
+        <a
+          href="#projects"
+          className="rounded-full border border-border px-6 py-2 text-[13px] text-muted-foreground transition-colors hover:border-muted-foreground hover:text-foreground"
+        >
+          View work ↓
+        </a>
       </motion.div>
-
-      {/* Scroll Down Indicator */}
-      <motion.a
-        href="#about"
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        aria-label="Scroll to About section"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8, duration: 0.5 }}
-      >
-        <ArrowDown className="h-6 w-6 animate-bounce" />
-      </motion.a>
     </motion.section>
   );
 }
