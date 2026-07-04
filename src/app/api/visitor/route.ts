@@ -15,22 +15,34 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ count: 100 }, { status: 200 });
   }
 
-  console.log("Visitor count API called", request.json());
+  if (!GIST_ID || !GITHUB_TOKEN) {
+    return NextResponse.json(
+      { error: "Missing GIST_ID or GITHUB_TOKEN environment variable" },
+      { status: 500 }
+    );
+  }
 
   // Step 1: Get current Gist content
   const gistRes = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
     headers,
   });
 
+  if (!gistRes.ok) {
+    return NextResponse.json(
+      { error: `Failed to fetch gist: ${gistRes.status} ${gistRes.statusText}` },
+      { status: 502 }
+    );
+  }
+
   const gistData = await gistRes.json();
-  const content = gistData.files[FILENAME]?.content;
+  const content = gistData.files?.[FILENAME]?.content;
   const json = JSON.parse(content || '{"count":0}');
 
   // Step 2: Increment count
   json.count += 1;
 
   // Step 3: Update Gist with new count
-  await fetch(`https://api.github.com/gists/${GIST_ID}`, {
+  const updateRes = await fetch(`https://api.github.com/gists/${GIST_ID}`, {
     method: "PATCH",
     headers,
     body: JSON.stringify({
@@ -41,6 +53,13 @@ export async function POST(request: NextRequest) {
       },
     }),
   });
+
+  if (!updateRes.ok) {
+    return NextResponse.json(
+      { error: `Failed to update gist: ${updateRes.status} ${updateRes.statusText}` },
+      { status: 502 }
+    );
+  }
 
   return NextResponse.json({ count: json.count });
 }
