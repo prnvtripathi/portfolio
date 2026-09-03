@@ -11,6 +11,7 @@ export interface Project {
   imageUrl?: string; // Alias for image
   githubUrl: string;
   liveUrl?: string;
+  archived?: boolean;
   featured?: boolean;
   date?: string;
   content?: string;

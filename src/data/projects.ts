@@ -8,6 +8,7 @@ export const projects = [
       "An automated API testing framework with Next.js frontend and Go backend.",
     image: "/projects/trafix.png",
     skills: ["Next.js", "Golang", "MongoDB", "Kestra", "Redis"],
+    archived: true,
     liveUrl: "https://trafyx.kyrexi.tech",
     githubUrl: "https://github.com/kyrexi/trafix",
   },
@@ -46,7 +47,7 @@ export const projects = [
       "Want to change color formats?? From rgb to hex to okhsl, colorfool has got you covered.",
     image: "/projects/colorfool.png",
     skills: ["Next.js", "TailwindCSS", "Shadcn", "Culori"],
-    liveUrl: "https://colorfool.kyrexi.tech",
+    liveUrl: "https://colorfool.vercel.app/",
     githubUrl: "https://github.com/prnvtripathi/colorfool",
   },
   {
@@ -56,7 +57,7 @@ export const projects = [
       "A tool to convert text prompts into JSON format, making it easier to work with structured data.",
     image: "/projects/jxon.png",
     skills: ["Next.js", "TailwindCSS", "Shadcn", "Culori"],
-    liveUrl: "https://jxon.kyrexi.tech",
+    liveUrl: "https://jxon.vercel.app/",
     githubUrl: "https://github.com/prnvtripathi/json-prompter",
   },
   {
@@ -75,7 +76,7 @@ export const projects = [
       "A goal tracking and reminder application that sends email notifications.",
     image: "/projects/goalpost.png",
     skills: ["Next.js", "MongoDB", "Node.js", "Cron Jobs"],
-    liveUrl: "https://goalpost.kyrexi.tech",
+    liveUrl: "https://goalpost-lac.vercel.app/",
     githubUrl: "https://github.com/kyrexi/goalpost",
   },
   {
@@ -123,6 +124,7 @@ export const projects = [
     description: "A gardening assistant platform for plant care and tracking.",
     image: "/projects/gardenify.png",
     skills: ["Next.js", "Tailwind CSS", "MongoDB"],
+    archived: true,
     liveUrl: "https://gardenify.vercel.app",
     githubUrl: "https://github.com/prnvtripathi/gardenify",
   },
