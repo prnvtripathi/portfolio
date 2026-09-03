@@ -32,3 +32,18 @@ The requested red-step probe was performed before adding `archived?: boolean`. I
 ## Concerns
 
 The repository-wide TypeScript baseline remains failing in unrelated blog files and generated Next.js types. Those errors were not modified as part of this task.
+
+## Fix Round 1
+
+### Commands and exact outcomes
+
+- `npm run build`: **fails** during `next build` before type validation because Turbopack cannot fetch the Google Fonts `DM Sans`, `JetBrains Mono`, and `Playfair Display` resources from `fonts.googleapis.com` in this environment. The command reports three `next/font` errors: `Failed to fetch ... from Google Fonts`.
+- `npx tsc --noEmit`: **fails** with the previously recorded diagnostics in generated `.next/types/app/blogs/[slug]/page.ts` and `src/app/blogs/page.tsx`; no project model/data diagnostics are reported.
+
+### Baseline provenance
+
+Read-only inspection of the parent commit (`31eed42^`, `384bf8c`) confirms the affected blog source predates Task 1. `git show HEAD^:src/app/blogs/page.tsx` contains the untyped `let localPosts = []` and `let hashnodePosts = []` declarations at lines 7–8, and the resulting `BlogPost[]` construction at line 53. `git show HEAD^:src/app/blogs/[slug]/page.tsx` contains the synchronous `Props.params` shape at lines 11–15 while awaiting `params` at lines 23–25 and 33–35. The parent history shows these files were last changed by commits `384bf8c` and `5d7ff43`, both before `31eed42`.
+
+### Code changes
+
+No production code changed in this fix round. Only this report was appended with verification and provenance evidence.
