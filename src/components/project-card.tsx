@@ -51,9 +51,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
         </div>
         <CardHeader>
-          <CardTitle className="text-xl font-bold">
-            {projectName}
-          </CardTitle>
+          <div className="flex items-center gap-2">
+            <CardTitle className="text-xl font-bold">
+              {projectName}
+            </CardTitle>
+            {project.archived && <Badge variant="secondary">Archived</Badge>}
+          </div>
           <CardDescription className="line-clamp-2">
             {project.description}
           </CardDescription>

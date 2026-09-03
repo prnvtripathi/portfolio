@@ -54,9 +54,16 @@ export function ProjectsSection() {
             }`}
           >
             <div className="mb-2 flex items-start justify-between gap-4">
-              <h3 className="font-serif text-[19px] leading-tight text-foreground">
-                {project.name}
-              </h3>
+              <div className="flex items-center gap-2">
+                <h3 className="font-serif text-[19px] leading-tight text-foreground">
+                  {project.name}
+                </h3>
+                {project.archived && (
+                  <span className="font-mono text-[10px] tracking-wide text-muted-foreground">
+                    Archived
+                  </span>
+                )}
+              </div>
               <div className="flex gap-4">
                 {project.liveUrl && (
                   <Link
