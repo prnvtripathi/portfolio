@@ -7,9 +7,9 @@ export interface Project {
   description: string;
   tags?: string[];
   skills?: string[]; // Alias for tags
-  image: string;
+  image?: string;
   imageUrl?: string; // Alias for image
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
   archived?: boolean;
   featured?: boolean;

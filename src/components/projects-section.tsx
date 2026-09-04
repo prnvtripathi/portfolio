@@ -91,7 +91,7 @@ export function ProjectsSection() {
               {project.description}
             </p>
             <span className="font-mono text-[10px] tracking-wide text-muted-foreground">
-              {project.skills.join(" · ")}
+              {(project.skills ?? project.tags ?? []).join(" · ")}
             </span>
           </motion.div>
         ))}
